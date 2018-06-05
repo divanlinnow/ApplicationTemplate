@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEDD2B79-3889-42FE-B30C-12C1B41E88CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.Services.Business.Tests</RootNamespace>
+    <AssemblyName>Domain.Services.Business.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.8.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Moq.4.8.1\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Threading.Tasks.Extensions.4.4.0\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="WorkflowServiceTests.cs" />
+    <Compile Include="TaskServiceTests.cs" />
+    <Compile Include="SupplierServiceTests.cs" />
+    <Compile Include="ServiceServiceTests.cs" />
+    <Compile Include="ProductServiceTests.cs" />
+    <Compile Include="OrganizationServiceTests.cs" />
+    <Compile Include="OrganizationDepartmentServiceTests.cs" />
+    <Compile Include="OrganizationBranchServiceTests.cs" />
+    <Compile Include="OrderServiceTests.cs" />
+    <Compile Include="JobServiceTests.cs" />
+    <Compile Include="EmployeeServiceTests.cs" />
+    <Compile Include="CustomerServiceTests.cs" />
+    <Compile Include="CurrencyServiceTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ApplicationFramework\ApplicationFramework.csproj">
+      <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
+      <Name>ApplicationFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ORM\ORM.EF\ORM.EF.csproj">
+      <Project>{ce6e2bed-9eb1-4492-8714-58db37d5525c}</Project>
+      <Name>ORM.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Business.Tests\Domain.Entities.Business.Tests.csproj">
+      <Project>{C7724903-AF57-4DAB-9132-9F1960245BAB}</Project>
+      <Name>Domain.Entities.Business.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Business\Domain.Entities.Business.csproj">
+      <Project>{f31fb428-1a7a-40bb-b80e-19dba852ce0d}</Project>
+      <Name>Domain.Entities.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Core\Domain.Entities.Core.csproj">
+      <Project>{54f3aeaa-378d-4337-999c-bfd0f9ae5ec1}</Project>
+      <Name>Domain.Entities.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Domain.Models.Business\Domain.Models.Business.csproj">
+      <Project>{9949fb86-f0ce-4864-aed8-3a76e2846db1}</Project>
+      <Name>Domain.Models.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Domain.Models.Core\Domain.Models.Core.csproj">
+      <Project>{CCB6CE9D-0303-4BA1-9580-DCDA0001A0D9}</Project>
+      <Name>Domain.Models.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Services.Business\Domain.Services.Business.csproj">
+      <Project>{07c1660f-b984-4399-a5bc-6c016806ebb2}</Project>
+      <Name>Domain.Services.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Services.Core\Domain.Services.Core.csproj">
+      <Project>{4c4d1a97-5960-48c7-8d8f-fb2b0221e5a3}</Project>
+      <Name>Domain.Services.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

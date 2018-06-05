@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C4D1A97-5960-48C7-8D8F-FB2B0221E5A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.Services.Core</RootNamespace>
+    <AssemblyName>Domain.Services.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressService.cs" />
+    <Compile Include="CityService.cs" />
+    <Compile Include="CountryService.cs" />
+    <Compile Include="EmailService.cs" />
+    <Compile Include="GenericServiceResponse.cs" />
+    <Compile Include="IAddressService.cs" />
+    <Compile Include="ICityService.cs" />
+    <Compile Include="ICountryService.cs" />
+    <Compile Include="IEmailService.cs" />
+    <Compile Include="IGenericServiceResponse.cs" />
+    <Compile Include="ILanguageService.cs" />
+    <Compile Include="INotificationTemplateService.cs" />
+    <Compile Include="IPermissionService.cs" />
+    <Compile Include="IPhoneNumberService.cs" />
+    <Compile Include="IProvinceService.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="LanguageService.cs" />
+    <Compile Include="NotificationTemplateService.cs" />
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="PhoneNumberService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceService.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ApplicationFramework\ApplicationFramework.csproj">
+      <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
+      <Name>ApplicationFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ORM\ORM.EF\ORM.EF.csproj">
+      <Project>{ce6e2bed-9eb1-4492-8714-58db37d5525c}</Project>
+      <Name>ORM.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Core\Domain.Entities.Core.csproj">
+      <Project>{54f3aeaa-378d-4337-999c-bfd0f9ae5ec1}</Project>
+      <Name>Domain.Entities.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Mappings\Domain.Mappings.Core\Domain.Mappings.Core.csproj">
+      <Project>{3861d5f2-2adf-491b-a16b-3ddbbdd70285}</Project>
+      <Name>Domain.Mappings.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Domain.Models.Core\Domain.Models.Core.csproj">
+      <Project>{CCB6CE9D-0303-4BA1-9580-DCDA0001A0D9}</Project>
+      <Name>Domain.Models.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
