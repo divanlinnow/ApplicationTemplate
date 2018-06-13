@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07C1660F-B984-4399-A5BC-6C016806EBB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.Services.Business</RootNamespace>
+    <AssemblyName>Domain.Services.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IWorkflowService.cs" />
+    <Compile Include="ITaskStatusService.cs" />
+    <Compile Include="ITaskService.cs" />
+    <Compile Include="ISupplierService.cs" />
+    <Compile Include="IServiceService.cs" />
+    <Compile Include="WorkflowService.cs" />
+    <Compile Include="TaskService.cs" />
+    <Compile Include="SupplierService.cs" />
+    <Compile Include="ServiceService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="IProductService.cs" />
+    <Compile Include="IOrganizationDepartmentService.cs" />
+    <Compile Include="IOrganizationBranchService.cs" />
+    <Compile Include="IOrganizationService.cs" />
+    <Compile Include="IOrderService.cs" />
+    <Compile Include="OrganizationDepartmentService.cs" />
+    <Compile Include="OrganizationBranchService.cs" />
+    <Compile Include="OrganizationService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="JobService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="CurrencyService.cs" />
+    <Compile Include="IJobService.cs" />
+    <Compile Include="IEmployeeService.cs" />
+    <Compile Include="ICustomerService.cs" />
+    <Compile Include="ICurrencyService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ApplicationFramework\ApplicationFramework.csproj">
+      <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
+      <Name>ApplicationFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ORM\ORM.EF\ORM.EF.csproj">
+      <Project>{ce6e2bed-9eb1-4492-8714-58db37d5525c}</Project>
+      <Name>ORM.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Business\Domain.Entities.Business.csproj">
+      <Project>{f31fb428-1a7a-40bb-b80e-19dba852ce0d}</Project>
+      <Name>Domain.Entities.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Domain.Entities.Core\Domain.Entities.Core.csproj">
+      <Project>{54F3AEAA-378D-4337-999C-BFD0F9AE5EC1}</Project>
+      <Name>Domain.Entities.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Mappings\Domain.Mappings.Business\Domain.Mappings.Business.csproj">
+      <Project>{f9dbb56b-3aab-4022-aa53-bd00af5a61b9}</Project>
+      <Name>Domain.Mappings.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Domain.Models.Business\Domain.Models.Business.csproj">
+      <Project>{9949FB86-F0CE-4864-AED8-3A76E2846DB1}</Project>
+      <Name>Domain.Models.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Domain.Models.Core\Domain.Models.Core.csproj">
+      <Project>{CCB6CE9D-0303-4BA1-9580-DCDA0001A0D9}</Project>
+      <Name>Domain.Models.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Services.Core\Domain.Services.Core.csproj">
+      <Project>{4c4d1a97-5960-48c7-8d8f-fb2b0221e5a3}</Project>
+      <Name>Domain.Services.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
