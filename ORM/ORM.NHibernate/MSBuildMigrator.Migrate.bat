@@ -1,1 +1,0 @@
-migrate --conn "server=.;Data Source=.;Initial Catalog=AppTemplateData;Integrated Security=True; MultipleActiveResultSets=True" --provider SqlServer2012 --assembly "..\..\..\ORM.NHibernate\bin\Debug\ORM.NHibernate.dll" --task Migrate
