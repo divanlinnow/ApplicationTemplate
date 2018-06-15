@@ -34,6 +34,30 @@ namespace Domain.Actions.Core.Services
         [Dependency]
         public ICountryService CountryService { get; set; }
 
+        [Dependency]
+        public IEmailService EmailService { get; set; }
+
+        [Dependency]
+        public ILanguageService LanguageService { get; set; }
+
+        [Dependency]
+        public INotificationTemplateService NotificationTemplateService { get; set; }
+
+        [Dependency]
+        public IPermissionService PermissionService { get; set; }
+
+        [Dependency]
+        public IPhoneNumberService PhoneNumberService { get; set; }
+
+        [Dependency]
+        public IProvinceService ProvinceService { get; set; }
+
+        [Dependency]
+        public IRoleService RoleService { get; set; }
+
+        [Dependency]
+        public IUserService UserService { get; set; }
+
         #region IDisposable implementation
 
         public void Dispose()

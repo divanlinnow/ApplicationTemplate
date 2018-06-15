@@ -14,13 +14,13 @@ namespace Domain.Actions.Core
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CityDto address)
+        public T Invoke(CityDto city)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.DeleteCity(address);
+                var serviceResult = ClientServices.CityService.DeleteCity(city);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

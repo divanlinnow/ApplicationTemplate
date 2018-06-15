@@ -6,21 +6,21 @@ using System;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateCity<T> : BasicAction<T> where T : class
+    public sealed class CreateCountry<T> : BasicAction<T> where T : class
     {
-        public CreateCity(IClientServicesProvider clientServices) : base(clientServices)
+        public CreateCountry(IClientServicesProvider clientServices) : base(clientServices)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CityDto city)
+        public T Invoke(CountryDto country)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.CreateCity(city);
+                var serviceResult = ClientServices.CountryService.CreateCountry(country);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

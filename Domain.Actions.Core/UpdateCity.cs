@@ -6,9 +6,9 @@ using System;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateCity<T> : BasicAction<T> where T : class
+    public sealed class UpdateCity<T> : BasicAction<T> where T : class
     {
-        public CreateCity(IClientServicesProvider clientServices) : base(clientServices)
+        public UpdateCity(IClientServicesProvider clientServices) : base(clientServices)
         {
         }
 
@@ -20,7 +20,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.CreateCity(city);
+                var serviceResult = ClientServices.CityService.UpdateCity(city);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

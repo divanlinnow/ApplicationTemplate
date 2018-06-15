@@ -6,30 +6,30 @@ using System;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateCity<T> : BasicAction<T> where T : class
+    public sealed class GetAllEmails<T> : BasicAction<T> where T : class
     {
-        public CreateCity(IClientServicesProvider clientServices) : base(clientServices)
+        public GetAllEmails(IClientServicesProvider clientServices) : base(clientServices)
         {
         }
 
-        public Func<GenericViewModel, T> OnComplete { get; set; }
+        public Func<GenericListViewModel<EmailDto>, T> OnComplete { get; set; }
 
-        public T Invoke(CityDto city)
+        public T Invoke()
         {
             return Execute(() =>
             {
-                var model = new GenericViewModel();
+                var model = new GenericListViewModel<EmailDto>();
 
-                var serviceResult = ClientServices.CityService.CreateCity(city);
+                var serviceResult = ClientServices.EmailService.GetAllEmails();
 
-                if (serviceResult == null || serviceResult.Notifications.HasErrors())
+                if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {
                     var errorMessage = "Sorry, an unexpected error occurred.";
                     model.Notifications.AddError(errorMessage);
                 }
                 else
                 {
-                    model.Success = serviceResult.Result;
+                    model.Items = serviceResult.Result;
                 }
 
                 return OnComplete(model);

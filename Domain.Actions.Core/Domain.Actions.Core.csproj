@@ -70,12 +70,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicAction.cs" />
+    <Compile Include="CreateLanguage.cs" />
+    <Compile Include="CreateEmail.cs" />
+    <Compile Include="CreateCountry.cs" />
     <Compile Include="CreateCity.cs" />
+    <Compile Include="DeleteLanguageById.cs" />
+    <Compile Include="DeleteLanguage.cs" />
+    <Compile Include="DeleteEmailById.cs" />
+    <Compile Include="DeleteEmail.cs" />
+    <Compile Include="DeleteCountryById.cs" />
+    <Compile Include="DeleteCountry.cs" />
     <Compile Include="DeleteCityById.cs" />
     <Compile Include="DeleteCity.cs" />
     <Compile Include="DeleteAddressById.cs" />
     <Compile Include="DeleteAddress.cs" />
+    <Compile Include="FindLanguageById.cs" />
+    <Compile Include="FindEmailById.cs" />
+    <Compile Include="FindCountryById.cs" />
     <Compile Include="FindCityById.cs" />
+    <Compile Include="GetAllLanguages.cs" />
+    <Compile Include="GetAllEmails.cs" />
+    <Compile Include="UpdateEmail.cs" />
+    <Compile Include="UpdateCountry.cs" />
+    <Compile Include="UpdateCity.cs" />
     <Compile Include="UpdateAddress.cs" />
     <Compile Include="CreateAddress.cs" />
     <Compile Include="FindAddressById.cs" />

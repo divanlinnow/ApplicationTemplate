@@ -6,21 +6,21 @@ using System;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateCity<T> : BasicAction<T> where T : class
+    public sealed class CreateLanguage<T> : BasicAction<T> where T : class
     {
-        public CreateCity(IClientServicesProvider clientServices) : base(clientServices)
+        public CreateLanguage(IClientServicesProvider clientServices) : base(clientServices)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CityDto city)
+        public T Invoke(LanguageDto language)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.CreateCity(city);
+                var serviceResult = ClientServices.LanguageService.CreateLanguage(language);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {
