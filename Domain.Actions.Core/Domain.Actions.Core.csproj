@@ -70,6 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicAction.cs" />
+    <Compile Include="CreateCity.cs" />
+    <Compile Include="DeleteCityById.cs" />
+    <Compile Include="DeleteCity.cs" />
+    <Compile Include="DeleteAddressById.cs" />
+    <Compile Include="DeleteAddress.cs" />
+    <Compile Include="FindCityById.cs" />
+    <Compile Include="UpdateAddress.cs" />
+    <Compile Include="CreateAddress.cs" />
+    <Compile Include="FindAddressById.cs" />
     <Compile Include="GetAllAddresses.cs" />
     <Compile Include="Services\ClientServicesProvider.cs" />
     <Compile Include="GetAllCities.cs" />
