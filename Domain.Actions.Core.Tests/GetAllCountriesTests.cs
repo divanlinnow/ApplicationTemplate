@@ -87,6 +87,7 @@ namespace Domain.Actions.Core.Tests
             Assert.IsTrue(result.Notifications.Count() == 1);
             Assert.IsTrue(result.HasErrors);
             Assert.IsNotNull(result.Items);
+            Assert.IsTrue(result.Items.Count() == 0);
             Assert.IsInstanceOfType(result.Items, typeof(IEnumerable<CountryDto>));
             Assert.IsTrue(result.Items.ToList().Count() == 0);
         }
