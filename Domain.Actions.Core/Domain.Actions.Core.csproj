@@ -74,6 +74,8 @@
     <Compile Include="CreateEmail.cs" />
     <Compile Include="CreateCountry.cs" />
     <Compile Include="CreateCity.cs" />
+    <Compile Include="DeleteNotificationTemplateById.cs" />
+    <Compile Include="DeleteNotificationTemplate.cs" />
     <Compile Include="DeleteLanguageById.cs" />
     <Compile Include="DeleteLanguage.cs" />
     <Compile Include="DeleteEmailById.cs" />
@@ -84,12 +86,16 @@
     <Compile Include="DeleteCity.cs" />
     <Compile Include="DeleteAddressById.cs" />
     <Compile Include="DeleteAddress.cs" />
+    <Compile Include="FindNotificationTemplateById.cs" />
     <Compile Include="FindLanguageById.cs" />
     <Compile Include="FindEmailById.cs" />
     <Compile Include="FindCountryById.cs" />
     <Compile Include="FindCityById.cs" />
+    <Compile Include="GetAllNotificationTemplates.cs" />
     <Compile Include="GetAllLanguages.cs" />
     <Compile Include="GetAllEmails.cs" />
+    <Compile Include="UpdateNotificationTemplate.cs" />
+    <Compile Include="UpdateLanguage.cs" />
     <Compile Include="ActionTypes\GetListAction.cs" />
     <Compile Include="UpdateEmail.cs" />
     <Compile Include="UpdateCountry.cs" />
