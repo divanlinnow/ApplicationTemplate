@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicAction.cs" />
+    <Compile Include="ActionTypes\BasicAction.cs" />
     <Compile Include="CreateLanguage.cs" />
     <Compile Include="CreateEmail.cs" />
     <Compile Include="CreateCountry.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="FindCityById.cs" />
     <Compile Include="GetAllLanguages.cs" />
     <Compile Include="GetAllEmails.cs" />
+    <Compile Include="ActionTypes\GetListAction.cs" />
     <Compile Include="UpdateEmail.cs" />
     <Compile Include="UpdateCountry.cs" />
     <Compile Include="UpdateCity.cs" />

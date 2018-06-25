@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Web;
 
-namespace Domain.Actions.Core
+namespace Domain.Actions.Core.ActionTypes
 {
     public class BasicAction<T> where T : class
     {
