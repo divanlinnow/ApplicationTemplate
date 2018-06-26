@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class UpdateAddress<T> : BasicAction<T> where T : class
     {
-        public UpdateAddress(IServiceProviderCore clientServices) : base(clientServices)
+        public UpdateAddress(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.AddressService.UpdateAddress(address);
+                var serviceResult = ServiceProvider.AddressService.UpdateAddress(address);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

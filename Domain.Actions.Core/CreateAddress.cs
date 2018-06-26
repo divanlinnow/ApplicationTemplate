@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class CreateAddress<T> : BasicAction<T> where T : class
     {
-        public CreateAddress(IServiceProviderCore clientServices) : base(clientServices)
+        public CreateAddress(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.AddressService.CreateAddress(address);
+                var serviceResult = ServiceProvider.AddressService.CreateAddress(address);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

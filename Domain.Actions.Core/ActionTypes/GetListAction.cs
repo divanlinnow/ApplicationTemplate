@@ -11,8 +11,8 @@ namespace Domain.Actions.Core.ActionTypes
         where T : class
         where K : class
     {
-        protected GetListAction(IServiceProviderCore clientServices)
-            : base(clientServices)
+        protected GetListAction(IServiceProviderCore serviceProvider)
+            : base(serviceProvider)
         {
             ViewModel = new GenericListViewModel<K>();
         }

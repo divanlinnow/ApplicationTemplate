@@ -8,7 +8,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteEmailById<T> : BasicAction<T> where T : class
     {
-        public DeleteEmailById(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteEmailById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -20,7 +20,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.EmailService.DeleteEmail(id);
+                var serviceResult = ServiceProvider.EmailService.DeleteEmail(id);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

@@ -26,9 +26,42 @@ namespace Domain.ServiceProvider.Business
         
         [Dependency]
         public ICurrencyService CurrencyService { get; set; }
-        
 
+        [Dependency]
+        public ICustomerService CustomerService { get; set; }
 
+        [Dependency]
+        public IEmployeeService EmployeeService { get; set; }
+
+        [Dependency]
+        public IJobService JobService { get; set; }
+
+        [Dependency]
+        public IOrderService OrderService { get; set; }
+
+        [Dependency]
+        public IOrganizationBranchService OrganizationBranchService { get; set; }
+
+        [Dependency]
+        public IOrganizationDepartmentService OrganizationDepartmentService { get; set; }
+
+        [Dependency]
+        public IOrganizationService OrganizationService { get; set; }
+
+        [Dependency]
+        public IProductService ProductService { get; set; }
+
+        [Dependency]
+        public IServiceService ServiceService { get; set; }
+
+        [Dependency]
+        public ISupplierService SupplierService { get; set; }
+
+        [Dependency]
+        public ITaskService TaskService { get; set; }
+
+        [Dependency]
+        public IWorkflowService WorkflowService { get; set; }
 
         #region IDisposable implementation
 

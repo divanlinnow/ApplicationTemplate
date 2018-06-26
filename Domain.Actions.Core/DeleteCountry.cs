@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteCountry<T> : BasicAction<T> where T : class
     {
-        public DeleteCountry(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteCountry(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CountryService.DeleteCountry(country);
+                var serviceResult = ServiceProvider.CountryService.DeleteCountry(country);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

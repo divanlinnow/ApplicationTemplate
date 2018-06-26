@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteCity<T> : BasicAction<T> where T : class
     {
-        public DeleteCity(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteCity(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.DeleteCity(city);
+                var serviceResult = ServiceProvider.CityService.DeleteCity(city);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

@@ -8,7 +8,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteNotificationTemplateById<T> : BasicAction<T> where T : class
     {
-        public DeleteNotificationTemplateById(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteNotificationTemplateById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -20,7 +20,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.NotificationTemplateService.DeleteNotificationTemplate(id);
+                var serviceResult = ServiceProvider.NotificationTemplateService.DeleteNotificationTemplate(id);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

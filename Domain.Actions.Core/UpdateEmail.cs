@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class UpdateEmail<T> : BasicAction<T> where T : class
     {
-        public UpdateEmail(IServiceProviderCore clientServices) : base(clientServices)
+        public UpdateEmail(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.EmailService.UpdateEmail(email);
+                var serviceResult = ServiceProvider.EmailService.UpdateEmail(email);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

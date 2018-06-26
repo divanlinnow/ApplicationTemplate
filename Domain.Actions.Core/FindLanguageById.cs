@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class FindLanguageById<T> : BasicAction<T> where T : class
     {
-        public FindLanguageById(IServiceProviderCore clientServices) : base(clientServices)
+        public FindLanguageById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericItemViewModel<LanguageDto>();
 
-                var serviceResult = ClientServices.LanguageService.FindLanguageById(id);
+                var serviceResult = ServiceProvider.LanguageService.FindLanguageById(id);
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

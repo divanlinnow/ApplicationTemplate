@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class FindEmailById<T> : BasicAction<T> where T : class
     {
-        public FindEmailById(IServiceProviderCore clientServices) : base(clientServices)
+        public FindEmailById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericItemViewModel<EmailDto>();
 
-                var serviceResult = ClientServices.EmailService.FindEmailById(id);
+                var serviceResult = ServiceProvider.EmailService.FindEmailById(id);
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

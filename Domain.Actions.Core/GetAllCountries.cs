@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllCountries<T> : BasicAction<T> where T : class
     {
-        public GetAllCountries(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllCountries(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<CountryDto>();
 
-                var serviceResult = ClientServices.CountryService.GetAllCountries();
+                var serviceResult = ServiceProvider.CountryService.GetAllCountries();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

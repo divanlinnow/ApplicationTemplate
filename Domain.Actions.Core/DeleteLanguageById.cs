@@ -8,7 +8,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteLanguageById<T> : BasicAction<T> where T : class
     {
-        public DeleteLanguageById(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteLanguageById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -20,7 +20,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.LanguageService.DeleteLanguage(id);
+                var serviceResult = ServiceProvider.LanguageService.DeleteLanguage(id);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

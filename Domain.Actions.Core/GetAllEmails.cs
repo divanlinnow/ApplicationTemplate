@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllEmails<T> : BasicAction<T> where T : class
     {
-        public GetAllEmails(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllEmails(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<EmailDto>();
 
-                var serviceResult = ClientServices.EmailService.GetAllEmails();
+                var serviceResult = ServiceProvider.EmailService.GetAllEmails();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class FindCountryById<T> : BasicAction<T> where T : class
     {
-        public FindCountryById(IServiceProviderCore clientServices) : base(clientServices)
+        public FindCountryById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericItemViewModel<CountryDto>();
 
-                var serviceResult = ClientServices.CountryService.FindCountryById(id);
+                var serviceResult = ServiceProvider.CountryService.FindCountryById(id);
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

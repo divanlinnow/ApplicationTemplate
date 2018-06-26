@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class FindCityById<T> : BasicAction<T> where T : class
     {
-        public FindCityById(IServiceProviderCore clientServices) : base(clientServices)
+        public FindCityById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericItemViewModel<CityDto>();
 
-                var serviceResult = ClientServices.CityService.FindCityById(id);
+                var serviceResult = ServiceProvider.CityService.FindCityById(id);
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

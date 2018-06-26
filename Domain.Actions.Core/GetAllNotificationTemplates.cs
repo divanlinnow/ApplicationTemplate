@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllNotificationTemplates<T> : BasicAction<T> where T : class
     {
-        public GetAllNotificationTemplates(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllNotificationTemplates(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<NotificationTemplateDto>();
 
-                var serviceResult = ClientServices.NotificationTemplateService.GetAllNotificationTemplates();
+                var serviceResult = ServiceProvider.NotificationTemplateService.GetAllNotificationTemplates();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

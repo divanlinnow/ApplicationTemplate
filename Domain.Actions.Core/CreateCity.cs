@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class CreateCity<T> : BasicAction<T> where T : class
     {
-        public CreateCity(IServiceProviderCore clientServices) : base(clientServices)
+        public CreateCity(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CityService.CreateCity(city);
+                var serviceResult = ServiceProvider.CityService.CreateCity(city);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

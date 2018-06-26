@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class DeleteAddress<T> : BasicAction<T> where T : class
     {
-        public DeleteAddress(IServiceProviderCore clientServices) : base(clientServices)
+        public DeleteAddress(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.AddressService.DeleteAddress(address);
+                var serviceResult = ServiceProvider.AddressService.DeleteAddress(address);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

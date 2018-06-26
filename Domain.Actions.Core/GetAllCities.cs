@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllCities<T> : BasicAction<T> where T : class
     {
-        public GetAllCities(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllCities(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<CityDto>();
 
-                var serviceResult = ClientServices.CityService.GetAllCities();
+                var serviceResult = ServiceProvider.CityService.GetAllCities();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

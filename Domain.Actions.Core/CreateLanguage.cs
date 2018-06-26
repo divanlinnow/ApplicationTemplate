@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class CreateLanguage<T> : BasicAction<T> where T : class
     {
-        public CreateLanguage(IServiceProviderCore clientServices) : base(clientServices)
+        public CreateLanguage(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.LanguageService.CreateLanguage(language);
+                var serviceResult = ServiceProvider.LanguageService.CreateLanguage(language);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

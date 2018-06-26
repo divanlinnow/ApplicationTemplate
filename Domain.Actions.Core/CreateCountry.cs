@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class CreateCountry<T> : BasicAction<T> where T : class
     {
-        public CreateCountry(IServiceProviderCore clientServices) : base(clientServices)
+        public CreateCountry(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.CountryService.CreateCountry(country);
+                var serviceResult = ServiceProvider.CountryService.CreateCountry(country);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllLanguages<T> : BasicAction<T> where T : class
     {
-        public GetAllLanguages(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllLanguages(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<LanguageDto>();
 
-                var serviceResult = ClientServices.LanguageService.GetAllLanguages();
+                var serviceResult = ServiceProvider.LanguageService.GetAllLanguages();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

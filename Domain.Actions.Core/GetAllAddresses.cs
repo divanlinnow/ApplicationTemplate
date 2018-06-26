@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllAddresses<T> : BasicAction<T> where T : class
     {
-        public GetAllAddresses(IServiceProviderCore clientServices) : base(clientServices)
+        public GetAllAddresses(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<AddressDto>();
 
-                var serviceResult = ClientServices.AddressService.GetAllAddresses();
+                var serviceResult = ServiceProvider.AddressService.GetAllAddresses();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {

@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class UpdateNotificationTemplate<T> : BasicAction<T> where T : class
     {
-        public UpdateNotificationTemplate(IServiceProviderCore clientServices) : base(clientServices)
+        public UpdateNotificationTemplate(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ClientServices.NotificationTemplateService.UpdateNotificationTemplate(notificationTemplate);
+                var serviceResult = ServiceProvider.NotificationTemplateService.UpdateNotificationTemplate(notificationTemplate);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {
