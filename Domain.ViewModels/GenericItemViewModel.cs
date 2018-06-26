@@ -1,4 +1,4 @@
-﻿namespace Domain.Actions.Core.ViewModels
+﻿namespace Domain.ViewModels
 {
     public class GenericItemViewModel<T> : ViewModelBase where T : class
     {

@@ -1,9 +1,9 @@
 ﻿using ApplicationFramework.Logging;
 using ApplicationFramework.Notifications;
-using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
 using Domain.Models.Core.Tests;
+using Domain.ServiceProvider.Core;
 using Domain.Services.Core;
+using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Linq;
@@ -14,13 +14,13 @@ namespace Domain.Actions.Core.Tests
     public class CreateAddressTests
     {
         private Mock<ILogger> mockLogger;
-        private Mock<IClientServicesProvider> mockClientServicesProvider;
+        private Mock<IServiceProviderCore> mockClientServicesProvider;
 
         [TestInitialize]
         public void Init()
         {
             mockLogger = new Mock<ILogger>();
-            mockClientServicesProvider = new Mock<IClientServicesProvider>();
+            mockClientServicesProvider = new Mock<IServiceProviderCore>();
         }
 
         [TestMethod]

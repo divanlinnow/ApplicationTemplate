@@ -1,15 +1,15 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Core.ActionTypes;
-using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
+using Domain.ViewModels;
 using Domain.Models.Core;
+using Domain.ServiceProvider.Core;
 using System;
 
 namespace Domain.Actions.Core
 {
     public sealed class DeleteEmail<T> : BasicAction<T> where T : class
     {
-        public DeleteEmail(IClientServicesProvider clientServices) : base(clientServices)
+        public DeleteEmail(IServiceProviderCore clientServices) : base(clientServices)
         {
         }
 

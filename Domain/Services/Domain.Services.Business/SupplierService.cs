@@ -5,13 +5,13 @@ using ApplicationFramework.Telemetry;
 using Domain.Entities.Business;
 using Domain.Mappings.Business;
 using Domain.Models.Business;
+using Domain.Services.Core;
 using ORM.EF.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
-namespace Domain.Services.Core
+namespace Domain.Services.Business
 {
     public class SupplierService : ServiceBase, ISupplierService
     {

@@ -1,15 +1,14 @@
-﻿using System;
-using ApplicationFramework.Caching;
+﻿using ApplicationFramework.Caching;
 using ApplicationFramework.Logging;
 using ApplicationFramework.Telemetry;
 using Domain.Services.Core;
+using System;
 using Unity;
 using Unity.Attributes;
 
-namespace Domain.Actions.Core.Services
+namespace Domain.ServiceProvider.Core
 {
-    // Need to seperate this into its own project
-    public class ClientServicesProvider : IClientServicesProvider
+    public class ServiceProviderCore : IServiceProviderCore
     {
         private bool disposed;
 
@@ -66,7 +65,7 @@ namespace Domain.Actions.Core.Services
             GC.SuppressFinalize(this);
         }
 
-        ~ClientServicesProvider()
+        ~ServiceProviderCore()
         {
             Dispose(false);
         }

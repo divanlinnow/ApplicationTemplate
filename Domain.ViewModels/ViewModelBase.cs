@@ -1,6 +1,6 @@
 ﻿using ApplicationFramework.Notifications;
 
-namespace Domain.Actions.Core.ViewModels
+namespace Domain.ViewModels
 {
     public abstract class ViewModelBase
     {

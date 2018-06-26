@@ -1,14 +1,14 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Core.ActionTypes;
-using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
+using Domain.ViewModels;
+using Domain.ServiceProvider.Core;
 using System;
 
 namespace Domain.Actions.Core
 {
     public sealed class DeleteNotificationTemplateById<T> : BasicAction<T> where T : class
     {
-        public DeleteNotificationTemplateById(IClientServicesProvider clientServices) : base(clientServices)
+        public DeleteNotificationTemplateById(IServiceProviderCore clientServices) : base(clientServices)
         {
         }
 

@@ -1,4 +1,4 @@
-﻿using Domain.Actions.Core.Services;
+﻿using Domain.ServiceProvider.Core;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -8,9 +8,9 @@ namespace Domain.Actions.Core.ActionTypes
 {
     public class BasicAction<T> where T : class
     {
-        protected readonly IClientServicesProvider ClientServices;
+        protected readonly IServiceProviderCore ClientServices;
 
-        public BasicAction(IClientServicesProvider clientServices)
+        public BasicAction(IServiceProviderCore clientServices)
         {
             this.ClientServices = clientServices;
         }

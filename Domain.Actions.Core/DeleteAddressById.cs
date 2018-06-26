@@ -1,14 +1,14 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Core.ActionTypes;
-using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
+using Domain.ViewModels;
+using Domain.ServiceProvider.Core;
 using System;
 
 namespace Domain.Actions.Core
 {
     public sealed class DeleteAddressById<T> : BasicAction<T> where T : class
     {
-        public DeleteAddressById(IClientServicesProvider clientServices) : base(clientServices)
+        public DeleteAddressById(IServiceProviderCore clientServices) : base(clientServices)
         {
         }
 

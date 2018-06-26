@@ -4,22 +4,16 @@ using ApplicationFramework.Telemetry;
 using Domain.Services.Core;
 using System;
 
-namespace Domain.Actions.Core.Services
+namespace Domain.ServiceProvider.Core
 {
-    public interface IClientServicesProvider : IDisposable
+    public interface IServiceProviderCore : IBaseServiceProvider
     {
-        ILogger Logger { get; }
-
-        ICache Cache { get; }
-
-        ITelemetry Telemetry { get; }
-
         IAddressService AddressService { get; }
-        
+
         ICityService CityService { get; }
 
         ICountryService CountryService { get; }
-        
+
         IEmailService EmailService { get; }
 
         ILanguageService LanguageService { get; }

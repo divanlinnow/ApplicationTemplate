@@ -1,7 +1,7 @@
 ﻿using ApplicationFramework.Notifications;
-using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
+using Domain.ServiceProvider.Core;
 using Domain.Services.Core;
+using Domain.ViewModels;
 using System;
 using System.Collections.Generic;
 
@@ -11,7 +11,7 @@ namespace Domain.Actions.Core.ActionTypes
         where T : class
         where K : class
     {
-        protected GetListAction(IClientServicesProvider clientServices)
+        protected GetListAction(IServiceProviderCore clientServices)
             : base(clientServices)
         {
             ViewModel = new GenericListViewModel<K>();

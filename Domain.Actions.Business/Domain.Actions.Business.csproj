@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionTypes\BasicAction.cs" />
+    <Compile Include="ActionTypes\GetListAction.cs" />
     <Compile Include="GetAllCurrencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,13 +55,29 @@
       <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
       <Name>ApplicationFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Actions.Core\Domain.Actions.Core.csproj">
-      <Project>{c4d3ea00-351c-413c-96b6-7e4f8602d43c}</Project>
-      <Name>Domain.Actions.Core</Name>
+    <ProjectReference Include="..\Domain.ServiceProvider.Business\Domain.ServiceProvider.Business.csproj">
+      <Project>{E5FDDCED-1245-4B0B-B82D-B14D5A4E7710}</Project>
+      <Name>Domain.ServiceProvider.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.ServiceProvider.Core\Domain.ServiceProvider.Core.csproj">
+      <Project>{7B2E2025-CD1C-4EE7-AF05-DAA9CC2B64D7}</Project>
+      <Name>Domain.ServiceProvider.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.ViewModels\Domain.ViewModels.csproj">
+      <Project>{836bf4c2-4630-4cf0-80a1-c7c333038527}</Project>
+      <Name>Domain.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Models\Domain.Models.Business\Domain.Models.Business.csproj">
       <Project>{9949FB86-F0CE-4864-AED8-3A76E2846DB1}</Project>
       <Name>Domain.Models.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Services\Domain.Services.Business\Domain.Services.Business.csproj">
+      <Project>{07C1660F-B984-4399-A5BC-6C016806EBB2}</Project>
+      <Name>Domain.Services.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Services\Domain.Services.Core\Domain.Services.Core.csproj">
+      <Project>{4C4D1A97-5960-48C7-8D8F-FB2B0221E5A3}</Project>
+      <Name>Domain.Services.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

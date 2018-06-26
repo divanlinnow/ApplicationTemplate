@@ -5,6 +5,7 @@ using ApplicationFramework.Telemetry;
 using Domain.Entities.Business;
 using Domain.Entities.Business.Tests;
 using Domain.Models.Business;
+using Domain.Services.Business;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using ORM.EF.Repositories;

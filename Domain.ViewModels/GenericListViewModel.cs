@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Domain.Actions.Core.ViewModels
+namespace Domain.ViewModels
 {
     public class GenericListViewModel<T> : ViewModelBase where T : class
     {

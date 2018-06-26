@@ -1,8 +1,7 @@
-﻿using Domain.Actions.Core.Services;
-using Domain.Actions.Core.ViewModels;
-using Domain.Models.Business;
+﻿using Domain.Models.Business;
 using Domain.Models.Business.Tests;
-using Domain.Services.Core;
+using Domain.ServiceProvider.Business;
+using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
@@ -12,35 +11,35 @@ namespace Domain.Actions.Core.Tests
     [TestClass]
     public class GetAllCurrenciesTests
     {
-        private Mock<IClientServicesProvider> mockClientServicesProvider;
+        private Mock<IServiceProviderBusiness> mockClientServicesProvider;
 
         [TestInitialize]
         public void Init()
         {
-            mockClientServicesProvider = new Mock<IClientServicesProvider>();
+            mockClientServicesProvider = new Mock<IServiceProviderBusiness>();
         }
 
-        [TestMethod]
-        [TestCategory("Actions")]
-        public void GetAllCurrencies_Action_Success()
-        {
-            var fakeResponse = new GenericServiceResponse<IEnumerable<CurrencyDto>>
-            {
-                Result = TestHelper.CurrencyDtos()
-            };
+        //[TestMethod]
+        //[TestCategory("Actions")]
+        //public void GetAllCurrencies_Action_Success()
+        //{
+        //    var fakeResponse = new Services.Core.GenericServiceResponse<IEnumerable<CurrencyDto>>
+        //    {
+        //        Result = TestHelper.CurrencyDtos()
+        //    };
 
-            //mockClientServicesProvider.Setup(x => x.CurrencyService.GetAllCities()).Returns(fakeResponse).Verifiable();
+        //    mockClientServicesProvider.Setup(x => x.CurrencyService.GetAllCurrencies()).Returns(fakeResponse).Verifiable();
 
-            ////TODO: Finish unit test
+        //    //TODO: Finish unit test
 
-            //var action = new GetAllCities<GenericListViewModel<CurrencyDto>>(mockClientServicesProvider)
-            //{
-            //    OnComplete = model => model
-            //};
+        //    var action = new GetAllCities<GenericListViewModel<CurrencyDto>>(mockClientServicesProvider)
+        //    {
+        //        OnComplete = model => model
+        //    };
 
-            //var result = action.Invoke();
+        //    var result = action.Invoke();
 
 
-        }
+        //}
     }
 }
