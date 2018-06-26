@@ -58,6 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEmailTests.cs" />
+    <Compile Include="CreateCountryTests.cs" />
+    <Compile Include="CreateCityTests.cs" />
+    <Compile Include="DeleteCityTests.cs" />
     <Compile Include="DeleteAddressTests.cs" />
     <Compile Include="CreateAddressTests.cs" />
     <Compile Include="GetAllAddressesTests.cs" />
