@@ -25,7 +25,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteLanguageTests_Action_Success()
+        public void DeleteLanguage_Action_Success()
         {
             // Arrange
             var languageDto = TestHelper.LanguageDto();
@@ -62,7 +62,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteLanguageTests_Action_Fails()
+        public void DeleteLanguage_Action_Fails()
         {
             // Arrange
             var languageDto = TestHelper.LanguageDto();

@@ -25,7 +25,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteCountryTests_Action_Success()
+        public void DeleteCountry_Action_Success()
         {
             // Arrange
             var countryDto = TestHelper.CountryDto();
@@ -62,7 +62,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteCountryTests_Action_Fails()
+        public void DeleteCountry_Action_Fails()
         {
             // Arrange
             var countryDto = TestHelper.CountryDto();

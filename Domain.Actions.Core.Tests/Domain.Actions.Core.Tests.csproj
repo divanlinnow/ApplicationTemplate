@@ -62,6 +62,7 @@
     <Compile Include="CreateEmailTests.cs" />
     <Compile Include="CreateCountryTests.cs" />
     <Compile Include="CreateCityTests.cs" />
+    <Compile Include="DeleteAddressByIdTests.cs" />
     <Compile Include="DeleteNotificationTemplateTests.cs" />
     <Compile Include="DeleteLanguageTests.cs" />
     <Compile Include="DeleteEmailTests.cs" />

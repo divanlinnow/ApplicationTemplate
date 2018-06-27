@@ -1,17 +1,17 @@
 ﻿using ApplicationFramework.Logging;
 using ApplicationFramework.Notifications;
 using Domain.ViewModels;
-using Domain.Models.Core.Tests;
 using Domain.Services.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Linq;
 using Domain.Services.Core.ServiceProvider;
+using System;
 
 namespace Domain.Actions.Core.Tests
 {
     [TestClass]
-    public class DeleteNotificationTemplateTests
+    public class DeleteAddressByIdTests
     {
         private Mock<ILogger> mockLogger;
         private Mock<IServiceProviderCore> mockClientServicesProvider;
@@ -25,28 +25,26 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteNotificationTemplate_Action_Success()
+        public void DeleteAddressById_Action_Success()
         {
             // Arrange
-            var notificationTemplateDto = TestHelper.NotificationTemplateDto();
-
             var fakeResponse = new GenericServiceResponse<bool>
             {
                 Result = true
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.NotificationTemplateService.DeleteNotificationTemplate(notificationTemplateDto)).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.AddressService.DeleteAddress(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
-            var action = new DeleteNotificationTemplate<GenericViewModel>(mockClientServicesProvider.Object)
+            var action = new DeleteAddressById<GenericViewModel>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
 
             // Act
-            var result = action.Invoke(notificationTemplateDto);
+            var result = action.Invoke(Guid.NewGuid());
 
             // Assert
             Assert.IsNotNull(result);
@@ -62,25 +60,23 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteNotificationTemplate_Action_Fails()
+        public void DeleteAddressById_Action_Fails()
         {
             // Arrange
-            var notificationTemplateDto = TestHelper.NotificationTemplateDto();
-
             GenericServiceResponse<bool> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.NotificationTemplateService.DeleteNotificationTemplate(notificationTemplateDto)).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.AddressService.DeleteAddress(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
-            var action = new DeleteNotificationTemplate<GenericViewModel>(mockClientServicesProvider.Object)
+            var action = new DeleteAddressById<GenericViewModel>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
 
             // Act
-            var result = action.Invoke(notificationTemplateDto);
+            var result = action.Invoke(Guid.NewGuid());
 
             // Assert
             Assert.IsNotNull(result);

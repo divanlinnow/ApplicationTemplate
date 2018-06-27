@@ -25,7 +25,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteEmailTests_Action_Success()
+        public void DeleteEmail_Action_Success()
         {
             // Arrange
             var emailDto = TestHelper.EmailDto();
@@ -62,7 +62,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteEmailTests_Action_Fails()
+        public void DeleteEmail_Action_Fails()
         {
             // Arrange
             var emailDto = TestHelper.EmailDto();

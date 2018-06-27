@@ -25,7 +25,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteAddressTests_Action_Success()
+        public void DeleteAddress_Action_Success()
         {
             // Arrange
             var addressDto = TestHelper.AddressDto();
@@ -62,7 +62,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteAddressTests_Action_Fails()
+        public void DeleteAddress_Action_Fails()
         {
             // Arrange
             var addressDto = TestHelper.AddressDto();

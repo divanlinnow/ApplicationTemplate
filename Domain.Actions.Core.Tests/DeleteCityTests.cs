@@ -25,7 +25,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteCityTests_Action_Success()
+        public void DeleteCity_Action_Success()
         {
             // Arrange
             var cityDto = TestHelper.CityDto();
@@ -62,7 +62,7 @@ namespace Domain.Actions.Core.Tests
 
         [TestMethod]
         [TestCategory("Actions - Core")]
-        public void DeleteCityTests_Action_Fails()
+        public void DeleteCity_Action_Fails()
         {
             // Arrange
             var cityDto = TestHelper.CityDto();
