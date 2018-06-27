@@ -58,9 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateLanguageTests.cs" />
     <Compile Include="CreateEmailTests.cs" />
     <Compile Include="CreateCountryTests.cs" />
     <Compile Include="CreateCityTests.cs" />
+    <Compile Include="DeleteNotificationTemplateTests.cs" />
+    <Compile Include="DeleteLanguageTests.cs" />
+    <Compile Include="DeleteEmailTests.cs" />
+    <Compile Include="DeleteCountryTests.cs" />
     <Compile Include="DeleteCityTests.cs" />
     <Compile Include="DeleteAddressTests.cs" />
     <Compile Include="CreateAddressTests.cs" />
