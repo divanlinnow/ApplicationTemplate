@@ -9,7 +9,7 @@ namespace Domain.Actions.Core
 {
     public sealed class GetAllCurrencies<T> : BasicAction<T> where T : class
     {
-        public GetAllCurrencies(IServiceProviderBusiness clientServices) : base(clientServices)
+        public GetAllCurrencies(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,11 +21,12 @@ namespace Domain.Actions.Core
             {
                 var model = new GenericListViewModel<CurrencyDto>();
 
-                var serviceResult = ClientServices.CurrencyService.GetAllCurrencies();
+                var serviceResult = ServiceProvider.CurrencyService.GetAllCurrencies();
 
                 if (serviceResult == null || serviceResult.Result == null || serviceResult.Notifications.HasErrors())
                 {
-                    model.Notifications.AddError("Sorry, an unexpected error occurred.");
+                    var errorMessage = "Sorry, an unexpected error occurred.";
+                    model.Notifications.AddError(errorMessage);
                 }
                 else
                 {

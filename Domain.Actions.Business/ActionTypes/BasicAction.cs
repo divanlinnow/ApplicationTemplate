@@ -8,11 +8,11 @@ namespace Domain.Actions.Business.ActionTypes
 {
     public class BasicAction<T> where T : class
     {
-        protected readonly IServiceProviderBusiness ClientServices;
+        protected readonly IServiceProviderBusiness ServiceProvider;
 
-        public BasicAction(IServiceProviderBusiness clientServices)
+        public BasicAction(IServiceProviderBusiness serviceProvider)
         {
-            this.ClientServices = clientServices;
+            this.ServiceProvider = serviceProvider;
         }
 
         public T Execute(Func<T> action, string callingClass, [CallerMemberName] string callerName = "")
@@ -21,7 +21,7 @@ namespace Domain.Actions.Business.ActionTypes
 
             var callReference = Guid.NewGuid();
 
-            ClientServices.Logger.Info($"[{callingClass}],[{callerName}] Started...");
+            ServiceProvider.Logger.Info($"[{callingClass}],[{callerName}] Started...");
             
             stopwatch.Start();
 
@@ -31,14 +31,14 @@ namespace Domain.Actions.Business.ActionTypes
             }
             catch (Exception ex)
             {
-                ClientServices.Logger.Error(ex.Message);
-                ClientServices.Logger.Error($"An error occurred while executing [{this.GetType().FullName}],[{callerName}]  Call Reference [{callReference}]");
+                ServiceProvider.Logger.Error(ex.Message);
+                ServiceProvider.Logger.Error($"An error occurred while executing [{this.GetType().FullName}],[{callerName}]  Call Reference [{callReference}]");
                 throw new HttpException(500, callReference.ToString());
             }
             finally
             {
                 stopwatch.Stop();
-                ClientServices.Logger.Info($"[{callingClass}],[{callerName}] Completed in [{stopwatch.ElapsedMilliseconds} ms]. ");
+                ServiceProvider.Logger.Info($"[{callingClass}],[{callerName}] Completed in [{stopwatch.ElapsedMilliseconds} ms]. ");
             }
         }
     }

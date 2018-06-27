@@ -62,6 +62,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApplicationFramework\ApplicationFramework.csproj">
+      <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
+      <Name>ApplicationFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Actions.Business\Domain.Actions.Business.csproj">
       <Project>{757d0155-3130-4f3a-ac01-9bf93ea7d2f0}</Project>
       <Name>Domain.Actions.Business</Name>
