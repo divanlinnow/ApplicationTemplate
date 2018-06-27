@@ -3,12 +3,12 @@ using ApplicationFramework.Notifications;
 using Domain.ViewModels;
 using Domain.Models.Core;
 using Domain.Models.Core.Tests;
-using Domain.ServiceProvider.Core;
 using Domain.Services.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.Services.Core.ServiceProvider;
 
 namespace Domain.Actions.Core.Tests
 {

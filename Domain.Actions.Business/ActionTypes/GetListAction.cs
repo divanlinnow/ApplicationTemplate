@@ -1,5 +1,5 @@
 ﻿using ApplicationFramework.Notifications;
-using Domain.ServiceProvider.Business;
+using Domain.Services.Business.ServiceProvider;
 using Domain.Services.Core;
 using Domain.ViewModels;
 using System;

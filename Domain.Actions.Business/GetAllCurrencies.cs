@@ -1,7 +1,7 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Business.ActionTypes;
 using Domain.Models.Business;
-using Domain.ServiceProvider.Business;
+using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 

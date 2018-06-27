@@ -1,10 +1,6 @@
-﻿using Domain.Models.Business;
-using Domain.Models.Business.Tests;
-using Domain.ServiceProvider.Business;
-using Domain.ViewModels;
+﻿using Domain.Services.Business.ServiceProvider;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Collections.Generic;
 
 namespace Domain.Actions.Core.Tests
 {

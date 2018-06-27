@@ -1,4 +1,4 @@
-﻿using Domain.ServiceProvider.Core;
+﻿using Domain.Services.Core.ServiceProvider;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;

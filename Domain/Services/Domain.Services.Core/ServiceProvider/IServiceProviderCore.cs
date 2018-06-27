@@ -1,6 +1,4 @@
-﻿using Domain.Services.Core;
-
-namespace Domain.ServiceProvider.Core
+﻿namespace Domain.Services.Core.ServiceProvider
 {
     public interface IServiceProviderCore : IBaseServiceProvider
     {

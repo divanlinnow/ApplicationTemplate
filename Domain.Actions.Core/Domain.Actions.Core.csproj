@@ -113,10 +113,6 @@
       <Project>{8695050C-A8BC-4E55-8190-9BB01346B47C}</Project>
       <Name>ApplicationFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.ServiceProvider.Core\Domain.ServiceProvider.Core.csproj">
-      <Project>{7b2e2025-cd1c-4ee7-af05-daa9cc2b64d7}</Project>
-      <Name>Domain.ServiceProvider.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain.ViewModels\Domain.ViewModels.csproj">
       <Project>{836bf4c2-4630-4cf0-80a1-c7c333038527}</Project>
       <Name>Domain.ViewModels</Name>

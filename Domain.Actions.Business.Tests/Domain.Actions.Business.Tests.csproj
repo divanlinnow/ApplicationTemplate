@@ -70,14 +70,6 @@
       <Project>{c4d3ea00-351c-413c-96b6-7e4f8602d43c}</Project>
       <Name>Domain.Actions.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.ServiceProvider.Business\Domain.ServiceProvider.Business.csproj">
-      <Project>{E5FDDCED-1245-4B0B-B82D-B14D5A4E7710}</Project>
-      <Name>Domain.ServiceProvider.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.ServiceProvider.Core\Domain.ServiceProvider.Core.csproj">
-      <Project>{7B2E2025-CD1C-4EE7-AF05-DAA9CC2B64D7}</Project>
-      <Name>Domain.ServiceProvider.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain.ViewModels\Domain.ViewModels.csproj">
       <Project>{836BF4C2-4630-4CF0-80A1-C7C333038527}</Project>
       <Name>Domain.ViewModels</Name>

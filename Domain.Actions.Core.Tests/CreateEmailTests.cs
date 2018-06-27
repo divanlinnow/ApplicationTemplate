@@ -1,8 +1,8 @@
 ﻿using ApplicationFramework.Logging;
 using ApplicationFramework.Notifications;
 using Domain.Models.Core.Tests;
-using Domain.ServiceProvider.Core;
 using Domain.Services.Core;
+using Domain.Services.Core.ServiceProvider;
 using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

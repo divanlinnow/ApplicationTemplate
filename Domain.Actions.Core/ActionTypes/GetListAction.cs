@@ -1,6 +1,6 @@
 ﻿using ApplicationFramework.Notifications;
-using Domain.ServiceProvider.Core;
 using Domain.Services.Core;
+using Domain.Services.Core.ServiceProvider;
 using Domain.ViewModels;
 using System;
 using System.Collections.Generic;
