@@ -62,6 +62,11 @@
     <Compile Include="CreateEmailTests.cs" />
     <Compile Include="CreateCountryTests.cs" />
     <Compile Include="CreateCityTests.cs" />
+    <Compile Include="DeleteNotificationTemplateByIdTests.cs" />
+    <Compile Include="DeleteLanguageByIdTests.cs" />
+    <Compile Include="DeleteEmailByIdTests.cs" />
+    <Compile Include="DeleteCountryByIdTests.cs" />
+    <Compile Include="DeleteCityByIdTests.cs" />
     <Compile Include="DeleteAddressByIdTests.cs" />
     <Compile Include="DeleteNotificationTemplateTests.cs" />
     <Compile Include="DeleteLanguageTests.cs" />
@@ -70,8 +75,15 @@
     <Compile Include="DeleteCityTests.cs" />
     <Compile Include="DeleteAddressTests.cs" />
     <Compile Include="CreateAddressTests.cs" />
+    <Compile Include="FindLanguageByIdTests.cs" />
+    <Compile Include="FindEmailByIdTests.cs" />
+    <Compile Include="FindCountryByIdTests.cs" />
+    <Compile Include="FindCityByIdTests.cs" />
+    <Compile Include="FindAddressByIdTests.cs" />
     <Compile Include="GetAllAddressesTests.cs" />
     <Compile Include="GetAllCitiesTests.cs" />
+    <Compile Include="GetAllLanguagesTests.cs" />
+    <Compile Include="GetAllEmailsTests.cs" />
     <Compile Include="GetAllCountriesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
