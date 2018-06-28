@@ -280,6 +280,37 @@ namespace Domain.Models.Core.Tests
             };
         }
 
+        public static List<NotificationTemplateDto> NotificationTemplateDtos()
+        {
+            return new List<NotificationTemplateDto>
+            {
+                new NotificationTemplateDto
+                {
+                    Name = "Test Notification Template 1",
+                    SubjectHeader = "Test Subject",
+                    Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+                    Created = DateTime.Now,
+                    CreatedBy = UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new NotificationTemplateDto
+                {
+                    Name = "Test Notification Template 2",
+                    SubjectHeader = "Test Subject",
+                    Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+                    Created = DateTime.Now,
+                    CreatedBy = UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
+            };
+        }
+
         public static PermissionDto PermissionDto()
         {
             return new PermissionDto

@@ -75,6 +75,7 @@
     <Compile Include="DeleteCityTests.cs" />
     <Compile Include="DeleteAddressTests.cs" />
     <Compile Include="CreateAddressTests.cs" />
+    <Compile Include="FindNotificationTemplateByIdTests.cs" />
     <Compile Include="FindLanguageByIdTests.cs" />
     <Compile Include="FindEmailByIdTests.cs" />
     <Compile Include="FindCountryByIdTests.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="FindAddressByIdTests.cs" />
     <Compile Include="GetAllAddressesTests.cs" />
     <Compile Include="GetAllCitiesTests.cs" />
+    <Compile Include="GetAllNotificationTemplatesTests.cs" />
     <Compile Include="GetAllLanguagesTests.cs" />
     <Compile Include="GetAllEmailsTests.cs" />
     <Compile Include="GetAllCountriesTests.cs" />
