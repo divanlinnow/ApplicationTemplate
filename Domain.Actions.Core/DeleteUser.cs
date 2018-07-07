@@ -7,21 +7,21 @@ using Domain.Services.Core.ServiceProvider;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateNotificationTemplate<T> : BasicAction<T> where T : class
+    public sealed class DeleteUser<T> : BasicAction<T> where T : class
     {
-        public CreateNotificationTemplate(IServiceProviderCore serviceProvider) : base(serviceProvider)
+        public DeleteUser(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(NotificationTemplateDto notificationTemplate)
+        public T Invoke(UserDto user)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.NotificationTemplateService.CreateNotificationTemplate(notificationTemplate);
+                var serviceResult = ServiceProvider.UserService.DeleteUser(user);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

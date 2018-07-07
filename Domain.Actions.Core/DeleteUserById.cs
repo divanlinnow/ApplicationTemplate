@@ -1,27 +1,26 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Core.ActionTypes;
 using Domain.ViewModels;
-using Domain.Models.Core;
 using System;
 using Domain.Services.Core.ServiceProvider;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateNotificationTemplate<T> : BasicAction<T> where T : class
+    public sealed class DeleteUserById<T> : BasicAction<T> where T : class
     {
-        public CreateNotificationTemplate(IServiceProviderCore serviceProvider) : base(serviceProvider)
+        public DeleteUserById(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(NotificationTemplateDto notificationTemplate)
+        public T Invoke(Guid id)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.NotificationTemplateService.CreateNotificationTemplate(notificationTemplate);
+                var serviceResult = ServiceProvider.UserService.DeleteUser(id);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

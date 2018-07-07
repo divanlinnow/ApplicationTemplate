@@ -7,21 +7,21 @@ using Domain.Services.Core.ServiceProvider;
 
 namespace Domain.Actions.Core
 {
-    public sealed class CreateNotificationTemplate<T> : BasicAction<T> where T : class
+    public sealed class CreateRole<T> : BasicAction<T> where T : class
     {
-        public CreateNotificationTemplate(IServiceProviderCore serviceProvider) : base(serviceProvider)
+        public CreateRole(IServiceProviderCore serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(NotificationTemplateDto notificationTemplate)
+        public T Invoke(RoleDto role)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.NotificationTemplateService.CreateNotificationTemplate(notificationTemplate);
+                var serviceResult = ServiceProvider.RoleService.CreateRole(role);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {
