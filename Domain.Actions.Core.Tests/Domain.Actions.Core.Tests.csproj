@@ -58,16 +58,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateUserTests.cs" />
+    <Compile Include="CreateRoleTests.cs" />
+    <Compile Include="CreateProvinceTests.cs" />
+    <Compile Include="CreatePhoneNumberTests.cs" />
+    <Compile Include="CreatePermissionTests.cs" />
+    <Compile Include="CreateNotificationTemplateTests.cs" />
     <Compile Include="CreateLanguageTests.cs" />
     <Compile Include="CreateEmailTests.cs" />
     <Compile Include="CreateCountryTests.cs" />
     <Compile Include="CreateCityTests.cs" />
+    <Compile Include="DeleteUserByIdTests.cs" />
+    <Compile Include="DeleteRoleByIdTests.cs" />
+    <Compile Include="DeleteProvinceByIdTests.cs" />
+    <Compile Include="DeletePhoneNumberByIdTests.cs" />
+    <Compile Include="DeletePermissionByIdTests.cs" />
     <Compile Include="DeleteNotificationTemplateByIdTests.cs" />
     <Compile Include="DeleteLanguageByIdTests.cs" />
     <Compile Include="DeleteEmailByIdTests.cs" />
     <Compile Include="DeleteCountryByIdTests.cs" />
     <Compile Include="DeleteCityByIdTests.cs" />
     <Compile Include="DeleteAddressByIdTests.cs" />
+    <Compile Include="DeleteUserTests.cs" />
+    <Compile Include="DeleteRoleTests.cs" />
+    <Compile Include="DeleteProvinceTests.cs" />
+    <Compile Include="DeletePhoneNumberTests.cs" />
+    <Compile Include="DeletePermissionTests.cs" />
     <Compile Include="DeleteNotificationTemplateTests.cs" />
     <Compile Include="DeleteLanguageTests.cs" />
     <Compile Include="DeleteEmailTests.cs" />
@@ -75,6 +91,11 @@
     <Compile Include="DeleteCityTests.cs" />
     <Compile Include="DeleteAddressTests.cs" />
     <Compile Include="CreateAddressTests.cs" />
+    <Compile Include="FindUserByIdTests.cs" />
+    <Compile Include="FindRoleByIdTests.cs" />
+    <Compile Include="FindProvinceByIdTests.cs" />
+    <Compile Include="FindPhoneNumberByIdTests.cs" />
+    <Compile Include="FindPermissionByIdTests.cs" />
     <Compile Include="FindNotificationTemplateByIdTests.cs" />
     <Compile Include="FindLanguageByIdTests.cs" />
     <Compile Include="FindEmailByIdTests.cs" />
@@ -83,6 +104,11 @@
     <Compile Include="FindAddressByIdTests.cs" />
     <Compile Include="GetAllAddressesTests.cs" />
     <Compile Include="GetAllCitiesTests.cs" />
+    <Compile Include="GetAllUsersTests.cs" />
+    <Compile Include="GetAllRolesTests.cs" />
+    <Compile Include="GetAllProvincesTests.cs" />
+    <Compile Include="GetAllPhoneNumbersTests.cs" />
+    <Compile Include="GetAllPermissionsTests.cs" />
     <Compile Include="GetAllNotificationTemplatesTests.cs" />
     <Compile Include="GetAllLanguagesTests.cs" />
     <Compile Include="GetAllEmailsTests.cs" />
