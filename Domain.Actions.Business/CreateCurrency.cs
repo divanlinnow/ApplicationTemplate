@@ -1,27 +1,27 @@
 ﻿using ApplicationFramework.Notifications;
-using Domain.Actions.Core.ActionTypes;
-using Domain.Models.Core;
-using Domain.Services.Core.ServiceProvider;
+using Domain.Actions.Business.ActionTypes;
+using Domain.Models.Business;
+using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 
-namespace Domain.Actions.Core
+namespace Domain.Actions.Business
 {
-    public sealed class UpdateUser<T> : BasicAction<T> where T : class
+    public sealed class CreateCurrency<T> : BasicAction<T> where T : class
     {
-        public UpdateUser(IServiceProviderCore serviceProvider) : base(serviceProvider)
+        public CreateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(UserDto user)
+        public T Invoke(CurrencyDto address)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.UserService.UpdateUser(user);
+                var serviceResult = ServiceProvider.CurrencyService.CreateCurrency(address);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

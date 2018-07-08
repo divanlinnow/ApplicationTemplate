@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ActionTypes\BasicAction.cs" />
     <Compile Include="ActionTypes\GetListAction.cs" />
+    <Compile Include="CreateCurrency.cs" />
     <Compile Include="GetAllCurrencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

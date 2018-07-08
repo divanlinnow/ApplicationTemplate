@@ -1,9 +1,9 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Core.ActionTypes;
-using Domain.ViewModels;
 using Domain.Models.Core;
-using System;
 using Domain.Services.Core.ServiceProvider;
+using Domain.ViewModels;
+using System;
 
 namespace Domain.Actions.Core
 {
