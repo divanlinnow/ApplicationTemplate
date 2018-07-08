@@ -5,11 +5,11 @@ using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 
-namespace Domain.Actions.Business
+namespace Domain.Actions.Core
 {
-    public sealed class CreateCurrency<T> : BasicAction<T> where T : class
+    public sealed class DeleteAddress<T> : BasicAction<T> where T : class
     {
-        public CreateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
+        public DeleteAddress(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Business
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.CurrencyService.CreateCurrency(currency);
+                var serviceResult = ServiceProvider.CurrencyService.DeleteCurrency(currency);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

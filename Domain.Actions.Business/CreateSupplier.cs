@@ -7,21 +7,21 @@ using System;
 
 namespace Domain.Actions.Business
 {
-    public sealed class CreateCurrency<T> : BasicAction<T> where T : class
+    public sealed class CreateSupplier<T> : BasicAction<T> where T : class
     {
-        public CreateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
+        public CreateSupplier(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CurrencyDto currency)
+        public T Invoke(SupplierDto supplier)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.CurrencyService.CreateCurrency(currency);
+                var serviceResult = ServiceProvider.SupplierService.CreateSupplier(supplier);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

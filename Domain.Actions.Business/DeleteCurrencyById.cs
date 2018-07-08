@@ -1,27 +1,26 @@
 ﻿using ApplicationFramework.Notifications;
 using Domain.Actions.Business.ActionTypes;
-using Domain.Models.Business;
 using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 
-namespace Domain.Actions.Business
+namespace Domain.Actions.Core
 {
-    public sealed class CreateCurrency<T> : BasicAction<T> where T : class
+    public sealed class DeleteCurrencyById<T> : BasicAction<T> where T : class
     {
-        public CreateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
+        public DeleteCurrencyById(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CurrencyDto currency)
+        public T Invoke(Guid id)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.CurrencyService.CreateCurrency(currency);
+                var serviceResult = ServiceProvider.CurrencyService.DeleteCurrency(id);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

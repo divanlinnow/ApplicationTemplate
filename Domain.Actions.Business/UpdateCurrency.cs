@@ -5,11 +5,11 @@ using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 
-namespace Domain.Actions.Business
+namespace Domain.Actions.Core
 {
-    public sealed class CreateCurrency<T> : BasicAction<T> where T : class
+    public sealed class UpdateCurrency<T> : BasicAction<T> where T : class
     {
-        public CreateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
+        public UpdateCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Domain.Actions.Business
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.CurrencyService.CreateCurrency(currency);
+                var serviceResult = ServiceProvider.CurrencyService.UpdateCurrency(currency);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {

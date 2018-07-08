@@ -47,9 +47,25 @@
   <ItemGroup>
     <Compile Include="ActionTypes\BasicAction.cs" />
     <Compile Include="ActionTypes\GetListAction.cs" />
+    <Compile Include="CreateWorkflow.cs" />
+    <Compile Include="CreateTask.cs" />
+    <Compile Include="CreateSupplier.cs" />
+    <Compile Include="CreateService.cs" />
+    <Compile Include="CreateProduct.cs" />
+    <Compile Include="CreateOrganizationDepartment.cs" />
+    <Compile Include="CreateOrganizationBranch.cs" />
+    <Compile Include="CreateOrganization.cs" />
+    <Compile Include="CreateOrder.cs" />
+    <Compile Include="CreateJob.cs" />
+    <Compile Include="CreateEmployee.cs" />
+    <Compile Include="CreateCustomer.cs" />
     <Compile Include="CreateCurrency.cs" />
+    <Compile Include="DeleteCurrencyById.cs" />
+    <Compile Include="DeleteCurrency.cs" />
+    <Compile Include="FindCurrencyById.cs" />
     <Compile Include="GetAllCurrencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateCurrency.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationFramework\ApplicationFramework.csproj">
@@ -63,6 +79,10 @@
     <ProjectReference Include="..\Domain\Models\Domain.Models.Business\Domain.Models.Business.csproj">
       <Project>{9949FB86-F0CE-4864-AED8-3A76E2846DB1}</Project>
       <Name>Domain.Models.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Models\Domain.Models.Core\Domain.Models.Core.csproj">
+      <Project>{CCB6CE9D-0303-4BA1-9580-DCDA0001A0D9}</Project>
+      <Name>Domain.Models.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Services\Domain.Services.Business\Domain.Services.Business.csproj">
       <Project>{07C1660F-B984-4399-A5BC-6C016806EBB2}</Project>
