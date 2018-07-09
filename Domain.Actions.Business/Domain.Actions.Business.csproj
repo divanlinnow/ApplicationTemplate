@@ -99,8 +99,32 @@
     <Compile Include="FindEmployeeById.cs" />
     <Compile Include="FindCustomerById.cs" />
     <Compile Include="FindCurrencyById.cs" />
+    <Compile Include="GetAllWorkflows.cs" />
+    <Compile Include="GetAllTasks.cs" />
+    <Compile Include="GetAllSuppliers.cs" />
+    <Compile Include="GetAllServices.cs" />
+    <Compile Include="GetAllProducts.cs" />
+    <Compile Include="GetAllOrganizationDepartments.cs" />
+    <Compile Include="GetAllOrganizationBranches.cs" />
+    <Compile Include="GetAllOrganizations.cs" />
+    <Compile Include="GetAllOrders.cs" />
+    <Compile Include="GetAllJobs.cs" />
+    <Compile Include="GetAllEmployees.cs" />
+    <Compile Include="GetAllCustomers.cs" />
     <Compile Include="GetAllCurrencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateWorkflow.cs" />
+    <Compile Include="UpdateTask.cs" />
+    <Compile Include="UpdateSupplier.cs" />
+    <Compile Include="UpdateService.cs" />
+    <Compile Include="UpdateProduct.cs" />
+    <Compile Include="UpdateOrganizationDepartment.cs" />
+    <Compile Include="UpdateOrganizationBranch.cs" />
+    <Compile Include="UpdateOrganization.cs" />
+    <Compile Include="UpdateOrder.cs" />
+    <Compile Include="UpdateJob.cs" />
+    <Compile Include="UpdateEmployee.cs" />
+    <Compile Include="UpdateCustomer.cs" />
     <Compile Include="UpdateCurrency.cs" />
   </ItemGroup>
   <ItemGroup>
