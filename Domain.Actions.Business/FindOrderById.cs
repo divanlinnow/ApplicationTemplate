@@ -5,7 +5,7 @@ using Domain.Services.Business.ServiceProvider;
 using Domain.ViewModels;
 using System;
 
-namespace Domain.Actions.Core
+namespace Domain.Actions.Business
 {
     public sealed class FindOrderById<T> : BasicAction<T> where T : class
     {

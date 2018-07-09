@@ -58,7 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetAllCurrenciesTests.cs" />
+    <Compile Include="CreateCurrencyTests.cs" />
+    <Compile Include="DeleteCurrencyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,10 +70,6 @@
     <ProjectReference Include="..\Domain.Actions.Business\Domain.Actions.Business.csproj">
       <Project>{757d0155-3130-4f3a-ac01-9bf93ea7d2f0}</Project>
       <Name>Domain.Actions.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Actions.Core\Domain.Actions.Core.csproj">
-      <Project>{c4d3ea00-351c-413c-96b6-7e4f8602d43c}</Project>
-      <Name>Domain.Actions.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.ViewModels\Domain.ViewModels.csproj">
       <Project>{836BF4C2-4630-4CF0-80A1-C7C333038527}</Project>
@@ -85,6 +82,10 @@
     <ProjectReference Include="..\Domain\Models\Domain.Models.Business\Domain.Models.Business.csproj">
       <Project>{9949fb86-f0ce-4864-aed8-3a76e2846db1}</Project>
       <Name>Domain.Models.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Models\Domain.Models.Core\Domain.Models.Core.csproj">
+      <Project>{CCB6CE9D-0303-4BA1-9580-DCDA0001A0D9}</Project>
+      <Name>Domain.Models.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Services\Domain.Services.Business\Domain.Services.Business.csproj">
       <Project>{07C1660F-B984-4399-A5BC-6C016806EBB2}</Project>
