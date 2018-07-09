@@ -7,21 +7,21 @@ using System;
 
 namespace Domain.Actions.Core
 {
-    public sealed class DeleteCurrency<T> : BasicAction<T> where T : class
+    public sealed class DeleteTask<T> : BasicAction<T> where T : class
     {
-        public DeleteCurrency(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
+        public DeleteTask(IServiceProviderBusiness serviceProvider) : base(serviceProvider)
         {
         }
 
         public Func<GenericViewModel, T> OnComplete { get; set; }
 
-        public T Invoke(CurrencyDto currency)
+        public T Invoke(TaskDto task)
         {
             return Execute(() =>
             {
                 var model = new GenericViewModel();
 
-                var serviceResult = ServiceProvider.CurrencyService.DeleteCurrency(currency);
+                var serviceResult = ServiceProvider.TaskService.DeleteTask(task);
 
                 if (serviceResult == null || serviceResult.Notifications.HasErrors())
                 {
