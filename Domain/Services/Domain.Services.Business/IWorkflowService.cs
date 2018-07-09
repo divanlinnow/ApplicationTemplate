@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<WorkflowDto>> GetAllWorkflows();
 
-        GenericServiceResponse<WorkflowDto> FindWorkflowById(Guid Id);
+        GenericServiceResponse<WorkflowDto> FindWorkflowById(int Id);
 
         GenericServiceResponse<bool> CreateWorkflow(WorkflowDto workflow);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteWorkflow(WorkflowDto workflow);
 
-        GenericServiceResponse<bool> DeleteWorkflow(Guid Id);
+        GenericServiceResponse<bool> DeleteWorkflow(int Id);
     }
 }

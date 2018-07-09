@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<UserDto>> GetAllUsers();
 
-        GenericServiceResponse<UserDto> FindUserById(Guid Id);
+        GenericServiceResponse<UserDto> FindUserById(int Id);
 
         GenericServiceResponse<bool> CreateUser(UserDto user);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteUser(UserDto user);
 
-        GenericServiceResponse<bool> DeleteUser(Guid Id);
+        GenericServiceResponse<bool> DeleteUser(int Id);
     }
 }

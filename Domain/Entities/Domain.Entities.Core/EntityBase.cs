@@ -4,6 +4,6 @@ namespace Domain.Entities.Core
 {
     public class EntityBase
     {
-        public virtual Guid ID { get; set; }
+        public virtual int ID { get; set; }
     }
 }

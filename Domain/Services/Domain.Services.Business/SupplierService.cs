@@ -7,7 +7,6 @@ using Domain.Mappings.Business;
 using Domain.Models.Business;
 using Domain.Services.Core;
 using ORM.EF.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -40,7 +39,7 @@ namespace Domain.Services.Business
             });
         }
 
-        public GenericServiceResponse<SupplierDto> FindSupplierById(Guid Id)
+        public GenericServiceResponse<SupplierDto> FindSupplierById(int Id)
         {
             return TryExecute<GenericServiceResponse<SupplierDto>>((response) =>
             {
@@ -100,7 +99,7 @@ namespace Domain.Services.Business
             });
         }
 
-        public GenericServiceResponse<bool> DeleteSupplier(Guid Id)
+        public GenericServiceResponse<bool> DeleteSupplier(int Id)
         {
             return TryExecute<GenericServiceResponse<bool>>((response) =>
             {

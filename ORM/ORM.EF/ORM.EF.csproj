@@ -86,10 +86,6 @@
     <Compile Include="Helpers\DataSeedingHelper.cs" />
     <Compile Include="Initializers\BusinessContextInitializer.cs" />
     <Compile Include="Initializers\CoreContextInitializer.cs" />
-    <Compile Include="Migrations\201804231448373_Init.cs" />
-    <Compile Include="Migrations\201804231448373_Init.Designer.cs">
-      <DependentUpon>201804231448373_Init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -116,11 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804231448373_Init.resx">
-      <DependentUpon>201804231448373_Init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

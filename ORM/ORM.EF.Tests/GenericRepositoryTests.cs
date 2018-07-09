@@ -56,7 +56,7 @@ namespace ORM.EF.Tests
         public void GenericRepository_FindById()
         {
             // Can pass in any type of T to the method.
-            var results = repository.FindById<Country>(Guid.NewGuid());
+            var results = repository.FindById<Country>(9999);
             Debug.WriteLine(log.ToString());
             Assert.IsTrue(log.ToString().Contains("FROM [AppTemplate].[Countries]"));
         }
@@ -67,7 +67,7 @@ namespace ORM.EF.Tests
         {
             var testEntity = new Country
             {
-                ID = Guid.NewGuid(),
+                ID = 9999,
                 ISOCode = "TC",
                 Abbreviation = "TC",
                 Name = "Test Country"

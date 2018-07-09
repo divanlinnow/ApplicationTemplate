@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<PermissionDto>> GetAllPermissions();
 
-        GenericServiceResponse<PermissionDto> FindPermissionById(Guid Id);
+        GenericServiceResponse<PermissionDto> FindPermissionById(int Id);
 
         GenericServiceResponse<bool> CreatePermission(PermissionDto permission);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeletePermission(PermissionDto permission);
 
-        GenericServiceResponse<bool> DeletePermission(Guid Id);
+        GenericServiceResponse<bool> DeletePermission(int Id);
     }
 }

@@ -40,7 +40,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<CountryDto> FindCountryById(Guid Id)
+        public GenericServiceResponse<CountryDto> FindCountryById(int Id)
         {
             return TryExecute<GenericServiceResponse<CountryDto>>((response) =>
             {
@@ -100,7 +100,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<bool> DeleteCountry(Guid Id)
+        public GenericServiceResponse<bool> DeleteCountry(int Id)
         {
             return TryExecute<GenericServiceResponse<bool>>((response) =>
             {

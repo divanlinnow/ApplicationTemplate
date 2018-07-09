@@ -40,7 +40,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<CityDto> FindCityById(Guid Id)
+        public GenericServiceResponse<CityDto> FindCityById(int Id)
         {
             return TryExecute<GenericServiceResponse<CityDto>>((response) =>
             {
@@ -100,7 +100,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<bool> DeleteCity(Guid Id)
+        public GenericServiceResponse<bool> DeleteCity(int Id)
         {
             return TryExecute<GenericServiceResponse<bool>>((response) =>
             {

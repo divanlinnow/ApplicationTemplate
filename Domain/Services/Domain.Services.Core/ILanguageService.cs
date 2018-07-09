@@ -1,6 +1,4 @@
-﻿using Domain.Entities.Core;
-using Domain.Models.Core;
-using System;
+﻿using Domain.Models.Core;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -9,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<LanguageDto>> GetAllLanguages();
 
-        GenericServiceResponse<LanguageDto> FindLanguageById(Guid Id);
+        GenericServiceResponse<LanguageDto> FindLanguageById(int Id);
 
         GenericServiceResponse<bool> CreateLanguage(LanguageDto language);
 
@@ -17,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteLanguage(LanguageDto language);
 
-        GenericServiceResponse<bool> DeleteLanguage(Guid Id);
+        GenericServiceResponse<bool> DeleteLanguage(int Id);
     }
 }

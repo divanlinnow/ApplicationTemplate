@@ -1,6 +1,4 @@
-﻿using Domain.Entities.Core;
-using Domain.Models.Core;
-using System;
+﻿using Domain.Models.Core;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -9,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<NotificationTemplateDto>> GetAllNotificationTemplates();
 
-        GenericServiceResponse<NotificationTemplateDto> FindNotificationTemplateById(Guid Id);
+        GenericServiceResponse<NotificationTemplateDto> FindNotificationTemplateById(int Id);
 
         GenericServiceResponse<bool> CreateNotificationTemplate(NotificationTemplateDto notificationTemplate);
 
@@ -17,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteNotificationTemplate(NotificationTemplateDto notificationTemplate);
 
-        GenericServiceResponse<bool> DeleteNotificationTemplate(Guid Id);
+        GenericServiceResponse<bool> DeleteNotificationTemplate(int Id);
     }
 }

@@ -31,7 +31,7 @@ namespace ORM.NHibernate.Repositories
             return Session.Query<TEntity>().Where(predicate);
         }
 
-        public TEntity FindById<TEntity>(Guid id) where TEntity : class
+        public TEntity FindById<TEntity>(int id) where TEntity : class
         {
             return Session.Load<TEntity>(id);
         }
@@ -58,7 +58,7 @@ namespace ORM.NHibernate.Repositories
             }
         }
 
-        public void Delete<TEntity>(Guid id) where TEntity : class
+        public void Delete<TEntity>(int id) where TEntity : class
         {
             var entity = Session.Load<TEntity>(id);
 

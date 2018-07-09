@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             supplierService = new SupplierService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Supplier>(Guid.Empty)).Returns(new Supplier()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Supplier>(It.IsAny<int>())).Returns(new Supplier()).Verifiable();
 
             // Act
-            var response = supplierService.FindSupplierById(Guid.Empty);
+            var response = supplierService.FindSupplierById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<SupplierDto>));
-            mockRepository.Verify(x => x.FindById<Supplier>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Supplier>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             supplierService = new SupplierService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Supplier>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Supplier>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = supplierService.FindSupplierById(Guid.Empty);
+            var response = supplierService.FindSupplierById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<SupplierDto>));
-            mockRepository.Verify(x => x.FindById<Supplier>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Supplier>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             supplierService = new SupplierService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Supplier>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Supplier>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = supplierService.DeleteSupplier(Guid.Empty);
+            var response = supplierService.DeleteSupplier(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Supplier>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Supplier>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             supplierService = new SupplierService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Supplier>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Supplier>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = supplierService.DeleteSupplier(Guid.Empty);
+            var response = supplierService.DeleteSupplier(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Supplier>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Supplier>(It.IsAny<int>()), Times.Once);
         }
     }
 }

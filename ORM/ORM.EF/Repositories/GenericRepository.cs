@@ -26,7 +26,7 @@ namespace ORM.EF.Repositories
             return results;
         }
 
-        public TEntity FindById<TEntity>(Guid id) where TEntity : class
+        public TEntity FindById<TEntity>(int id) where TEntity : class
         {
             Expression<Func<TEntity, bool>> lambda = RepositoryUtility.BuildLambdaForFindByKey<TEntity>(id);
             return context.Set<TEntity>().AsNoTracking().SingleOrDefault(lambda);
@@ -48,7 +48,7 @@ namespace ORM.EF.Repositories
             return true;
         }
 
-        public bool Delete<TEntity>(Guid id) where TEntity : class
+        public bool Delete<TEntity>(int id) where TEntity : class
         {
             var entity = FindById<TEntity>(id);
             context.Set<TEntity>().Remove(entity);

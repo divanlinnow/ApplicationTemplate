@@ -5,7 +5,6 @@ using Domain.Services.Core;
 using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Linq;
 
 namespace Domain.Actions.Business.Tests
@@ -34,7 +33,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.DeleteCurrency(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CurrencyService.DeleteCurrency(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
@@ -44,7 +43,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);
@@ -66,7 +65,7 @@ namespace Domain.Actions.Business.Tests
             GenericServiceResponse<bool> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.DeleteCurrency(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CurrencyService.DeleteCurrency(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
@@ -76,7 +75,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);

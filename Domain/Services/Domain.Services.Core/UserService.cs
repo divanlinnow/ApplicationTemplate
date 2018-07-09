@@ -6,9 +6,7 @@ using Domain.Entities.Core;
 using Domain.Mappings.Core;
 using Domain.Models.Core;
 using ORM.EF.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Domain.Services.Core
@@ -40,7 +38,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<UserDto> FindUserById(Guid Id)
+        public GenericServiceResponse<UserDto> FindUserById(int Id)
         {
             return TryExecute<GenericServiceResponse<UserDto>>((response) =>
             {
@@ -100,7 +98,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<bool> DeleteUser(Guid Id)
+        public GenericServiceResponse<bool> DeleteUser(int Id)
         {
             return TryExecute<GenericServiceResponse<bool>>((response) =>
             {

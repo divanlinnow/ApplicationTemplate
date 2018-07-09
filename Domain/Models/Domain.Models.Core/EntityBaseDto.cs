@@ -4,6 +4,6 @@ namespace Domain.Models.Core
 {
     public class EntityBaseDto
     {
-        public virtual Guid Id { get; set; }
+        public virtual int Id { get; set; }
     }
 }

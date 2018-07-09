@@ -75,16 +75,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             addressService = new AddressService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Address>(Guid.Empty)).Returns(new Address()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Address>(It.IsAny<int>())).Returns(new Address()).Verifiable();
 
             // Act
-            var response = addressService.FindAddressById(Guid.Empty);
+            var response = addressService.FindAddressById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<AddressDto>));
-            mockRepository.Verify(x => x.FindById<Address>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Address>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -93,17 +93,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             addressService = new AddressService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Address>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Address>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = addressService.FindAddressById(Guid.Empty);
+            var response = addressService.FindAddressById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<AddressDto>));
-            mockRepository.Verify(x => x.FindById<Address>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Address>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -232,17 +232,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             addressService = new AddressService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Address>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Address>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = addressService.DeleteAddress(Guid.Empty);
+            var response = addressService.DeleteAddress(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Address>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Address>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -251,17 +251,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             addressService = new AddressService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Address>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Address>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = addressService.DeleteAddress(Guid.Empty);
+            var response = addressService.DeleteAddress(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Address>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Address>(It.IsAny<int>()), Times.Once);
         }
     }
 }

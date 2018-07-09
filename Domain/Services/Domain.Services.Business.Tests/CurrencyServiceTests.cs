@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             currencyService = new CurrencyService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Currency>(Guid.Empty)).Returns(new Currency()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Currency>(It.IsAny<int>())).Returns(new Currency()).Verifiable();
 
             // Act
-            var response = currencyService.FindCurrencyById(Guid.Empty);
+            var response = currencyService.FindCurrencyById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<CurrencyDto>));
-            mockRepository.Verify(x => x.FindById<Currency>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Currency>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             currencyService = new CurrencyService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Currency>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Currency>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = currencyService.FindCurrencyById(Guid.Empty);
+            var response = currencyService.FindCurrencyById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<CurrencyDto>));
-            mockRepository.Verify(x => x.FindById<Currency>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Currency>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             currencyService = new CurrencyService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Currency>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Currency>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = currencyService.DeleteCurrency(Guid.Empty);
+            var response = currencyService.DeleteCurrency(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Currency>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Currency>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             currencyService = new CurrencyService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Currency>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Currency>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = currencyService.DeleteCurrency(Guid.Empty);
+            var response = currencyService.DeleteCurrency(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Currency>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Currency>(It.IsAny<int>()), Times.Once);
         }
     }
 }

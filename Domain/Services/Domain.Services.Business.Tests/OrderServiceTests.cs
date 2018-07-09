@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             orderService = new OrderService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Order>(Guid.Empty)).Returns(new Order()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Order>(It.IsAny<int>())).Returns(new Order()).Verifiable();
 
             // Act
-            var response = orderService.FindOrderById(Guid.Empty);
+            var response = orderService.FindOrderById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<OrderDto>));
-            mockRepository.Verify(x => x.FindById<Order>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Order>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             orderService = new OrderService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Order>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Order>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = orderService.FindOrderById(Guid.Empty);
+            var response = orderService.FindOrderById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<OrderDto>));
-            mockRepository.Verify(x => x.FindById<Order>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Order>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             orderService = new OrderService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Order>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Order>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = orderService.DeleteOrder(Guid.Empty);
+            var response = orderService.DeleteOrder(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Order>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Order>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             orderService = new OrderService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Order>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Order>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = orderService.DeleteOrder(Guid.Empty);
+            var response = orderService.DeleteOrder(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Order>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Order>(It.IsAny<int>()), Times.Once);
         }
     }
 }

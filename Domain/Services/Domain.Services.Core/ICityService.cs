@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<CityDto>> GetAllCities();
 
-        GenericServiceResponse<CityDto> FindCityById(Guid Id);
+        GenericServiceResponse<CityDto> FindCityById(int Id);
 
         GenericServiceResponse<bool> CreateCity(CityDto city);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteCity(CityDto city);
 
-        GenericServiceResponse<bool> DeleteCity(Guid Id);
+        GenericServiceResponse<bool> DeleteCity(int Id);
     }
 }

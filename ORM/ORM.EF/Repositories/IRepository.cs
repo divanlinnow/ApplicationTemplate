@@ -10,13 +10,13 @@ namespace ORM.EF.Repositories
 
         IEnumerable<TEntity> FindBy<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class;
 
-        TEntity FindById<TEntity>(Guid id) where TEntity : class;
+        TEntity FindById<TEntity>(int id) where TEntity : class;
 
         bool Insert<TEntity>(TEntity entity) where TEntity : class;
 
         bool Update<TEntity>(TEntity entity) where TEntity : class;
 
-        bool Delete<TEntity>(Guid id) where TEntity : class;
+        bool Delete<TEntity>(int id) where TEntity : class;
 
         bool Delete<TEntity>(TEntity entity) where TEntity : class;
     }

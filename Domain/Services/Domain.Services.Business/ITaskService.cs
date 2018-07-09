@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<TaskDto>> GetAllTasks();
 
-        GenericServiceResponse<TaskDto> FindTaskById(Guid Id);
+        GenericServiceResponse<TaskDto> FindTaskById(int Id);
 
         GenericServiceResponse<bool> CreateTask(TaskDto task);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteTask(TaskDto task);
 
-        GenericServiceResponse<bool> DeleteTask(Guid Id);
+        GenericServiceResponse<bool> DeleteTask(int Id);
     }
 }

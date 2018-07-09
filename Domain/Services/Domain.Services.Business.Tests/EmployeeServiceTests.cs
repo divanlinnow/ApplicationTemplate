@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             employeeService = new EmployeeService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Employee>(Guid.Empty)).Returns(new Employee()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Employee>(It.IsAny<int>())).Returns(new Employee()).Verifiable();
 
             // Act
-            var response = employeeService.FindEmployeeById(Guid.Empty);
+            var response = employeeService.FindEmployeeById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<EmployeeDto>));
-            mockRepository.Verify(x => x.FindById<Employee>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Employee>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             employeeService = new EmployeeService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Employee>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Employee>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = employeeService.FindEmployeeById(Guid.Empty);
+            var response = employeeService.FindEmployeeById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<EmployeeDto>));
-            mockRepository.Verify(x => x.FindById<Employee>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Employee>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             employeeService = new EmployeeService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Employee>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Employee>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = employeeService.DeleteEmployee(Guid.Empty);
+            var response = employeeService.DeleteEmployee(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Employee>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Employee>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             employeeService = new EmployeeService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Employee>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Employee>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = employeeService.DeleteEmployee(Guid.Empty);
+            var response = employeeService.DeleteEmployee(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Employee>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Employee>(It.IsAny<int>()), Times.Once);
         }
     }
 }

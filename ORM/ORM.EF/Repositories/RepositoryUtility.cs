@@ -5,7 +5,7 @@ namespace ORM.EF.Repositories
 {
     public static class RepositoryUtility
     {
-        public static Expression<Func<TEntity, bool>> BuildLambdaForFindByKey<TEntity>(Guid ID)
+        public static Expression<Func<TEntity, bool>> BuildLambdaForFindByKey<TEntity>(int ID)
         {
             var item = Expression.Parameter(typeof(TEntity), "entity");
             var prop = Expression.Property(item, "ID");

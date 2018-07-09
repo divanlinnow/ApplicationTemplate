@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             organizationDepartmentService = new OrganizationDepartmentService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<OrganizationDepartment>(Guid.Empty)).Returns(new OrganizationDepartment()).Verifiable();
+            mockRepository.Setup(x => x.FindById<OrganizationDepartment>(It.IsAny<int>())).Returns(new OrganizationDepartment()).Verifiable();
 
             // Act
-            var response = organizationDepartmentService.FindOrganizationDepartmentById(Guid.Empty);
+            var response = organizationDepartmentService.FindOrganizationDepartmentById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<OrganizationDepartmentDto>));
-            mockRepository.Verify(x => x.FindById<OrganizationDepartment>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<OrganizationDepartment>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             organizationDepartmentService = new OrganizationDepartmentService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<OrganizationDepartment>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<OrganizationDepartment>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = organizationDepartmentService.FindOrganizationDepartmentById(Guid.Empty);
+            var response = organizationDepartmentService.FindOrganizationDepartmentById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<OrganizationDepartmentDto>));
-            mockRepository.Verify(x => x.FindById<OrganizationDepartment>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<OrganizationDepartment>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             organizationDepartmentService = new OrganizationDepartmentService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<OrganizationDepartment>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<OrganizationDepartment>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = organizationDepartmentService.DeleteOrganizationDepartment(Guid.Empty);
+            var response = organizationDepartmentService.DeleteOrganizationDepartment(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<OrganizationDepartment>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<OrganizationDepartment>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             organizationDepartmentService = new OrganizationDepartmentService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<OrganizationDepartment>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<OrganizationDepartment>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = organizationDepartmentService.DeleteOrganizationDepartment(Guid.Empty);
+            var response = organizationDepartmentService.DeleteOrganizationDepartment(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<OrganizationDepartment>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<OrganizationDepartment>(It.IsAny<int>()), Times.Once);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<OrganizationDepartmentDto>> GetAllOrganizationDepartments();
 
-        GenericServiceResponse<OrganizationDepartmentDto> FindOrganizationDepartmentById(Guid Id);
+        GenericServiceResponse<OrganizationDepartmentDto> FindOrganizationDepartmentById(int Id);
 
         GenericServiceResponse<bool> CreateOrganizationDepartment(OrganizationDepartmentDto organizationDepartment);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteOrganizationDepartment(OrganizationDepartmentDto organizationDepartment);
 
-        GenericServiceResponse<bool> DeleteOrganizationDepartment(Guid Id);
+        GenericServiceResponse<bool> DeleteOrganizationDepartment(int Id);
     }
 }

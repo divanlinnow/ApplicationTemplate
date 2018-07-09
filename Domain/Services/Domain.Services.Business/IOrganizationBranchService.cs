@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<OrganizationBranchDto>> GetAllOrganizationBranches();
 
-        GenericServiceResponse<OrganizationBranchDto> FindOrganizationBranchById(Guid Id);
+        GenericServiceResponse<OrganizationBranchDto> FindOrganizationBranchById(int Id);
 
         GenericServiceResponse<bool> CreateOrganizationBranch(OrganizationBranchDto organizationBranch);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteOrganizationBranch(OrganizationBranchDto organizationBranch);
 
-        GenericServiceResponse<bool> DeleteOrganizationBranch(Guid Id);
+        GenericServiceResponse<bool> DeleteOrganizationBranch(int Id);
     }
 }

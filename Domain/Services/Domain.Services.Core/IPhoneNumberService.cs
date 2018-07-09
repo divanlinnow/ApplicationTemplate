@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<PhoneNumberDto>> GetAllPhoneNumbers();
 
-        GenericServiceResponse<PhoneNumberDto> FindPhoneNumberById(Guid Id);
+        GenericServiceResponse<PhoneNumberDto> FindPhoneNumberById(int Id);
 
         GenericServiceResponse<bool> CreatePhoneNumber(PhoneNumberDto phoneNumber);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeletePhoneNumber(PhoneNumberDto phoneNumber);
 
-        GenericServiceResponse<bool> DeletePhoneNumber(Guid Id);
+        GenericServiceResponse<bool> DeletePhoneNumber(int Id);
     }
 }

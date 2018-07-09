@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<CountryDto>> GetAllCountries();
 
-        GenericServiceResponse<CountryDto> FindCountryById(Guid Id);
+        GenericServiceResponse<CountryDto> FindCountryById(int Id);
 
         GenericServiceResponse<bool> CreateCountry(CountryDto country);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteCountry(CountryDto country);
 
-        GenericServiceResponse<bool> DeleteCountry(Guid Id);
+        GenericServiceResponse<bool> DeleteCountry(int Id);
     }
 }

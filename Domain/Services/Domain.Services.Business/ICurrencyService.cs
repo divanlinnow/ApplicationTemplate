@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<CurrencyDto>> GetAllCurrencies();
 
-        GenericServiceResponse<CurrencyDto> FindCurrencyById(Guid Id);
+        GenericServiceResponse<CurrencyDto> FindCurrencyById(int Id);
 
         GenericServiceResponse<bool> CreateCurrency(CurrencyDto currency);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteCurrency(CurrencyDto currency);
 
-        GenericServiceResponse<bool> DeleteCurrency(Guid Id);
+        GenericServiceResponse<bool> DeleteCurrency(int Id);
     }
 }

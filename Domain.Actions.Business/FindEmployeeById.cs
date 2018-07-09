@@ -15,7 +15,7 @@ namespace Domain.Actions.Business
 
         public Func<GenericItemViewModel<EmployeeDto>, T> OnComplete { get; set; }
 
-        public T Invoke(Guid id)
+        public T Invoke(int id)
         {
             return Execute(() =>
             {

@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<RoleDto>> GetAllRoles();
 
-        GenericServiceResponse<RoleDto> FindRoleById(Guid Id);
+        GenericServiceResponse<RoleDto> FindRoleById(int Id);
 
         GenericServiceResponse<bool> CreateRole(RoleDto role);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteRole(RoleDto role);
 
-        GenericServiceResponse<bool> DeleteRole(Guid Id);
+        GenericServiceResponse<bool> DeleteRole(int Id);
     }
 }

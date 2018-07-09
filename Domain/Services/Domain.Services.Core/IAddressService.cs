@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<AddressDto>> GetAllAddresses();
 
-        GenericServiceResponse<AddressDto> FindAddressById(Guid Id);
+        GenericServiceResponse<AddressDto> FindAddressById(int Id);
 
         GenericServiceResponse<bool> CreateAddress(AddressDto address);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteAddress(AddressDto address);
 
-        GenericServiceResponse<bool> DeleteAddress(Guid Id);
+        GenericServiceResponse<bool> DeleteAddress(int Id);
     }
 }

@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             jobService = new JobService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Job>(Guid.Empty)).Returns(new Job()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Job>(It.IsAny<int>())).Returns(new Job()).Verifiable();
 
             // Act
-            var response = jobService.FindJobById(Guid.Empty);
+            var response = jobService.FindJobById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<JobDto>));
-            mockRepository.Verify(x => x.FindById<Job>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Job>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             jobService = new JobService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Job>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Job>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = jobService.FindJobById(Guid.Empty);
+            var response = jobService.FindJobById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<JobDto>));
-            mockRepository.Verify(x => x.FindById<Job>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Job>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             jobService = new JobService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Job>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Job>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = jobService.DeleteJob(Guid.Empty);
+            var response = jobService.DeleteJob(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Job>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Job>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             jobService = new JobService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Job>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Job>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = jobService.DeleteJob(Guid.Empty);
+            var response = jobService.DeleteJob(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Job>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Job>(It.IsAny<int>()), Times.Once);
         }
     }
 }

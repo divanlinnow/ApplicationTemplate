@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Business;
 using Domain.Services.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Business
@@ -9,7 +8,7 @@ namespace Domain.Services.Business
     {
         GenericServiceResponse<IEnumerable<SupplierDto>> GetAllSuppliers();
 
-        GenericServiceResponse<SupplierDto> FindSupplierById(Guid Id);
+        GenericServiceResponse<SupplierDto> FindSupplierById(int Id);
 
         GenericServiceResponse<bool> CreateSupplier(SupplierDto supplier);
 
@@ -17,6 +16,6 @@ namespace Domain.Services.Business
 
         GenericServiceResponse<bool> DeleteSupplier(SupplierDto supplier);
 
-        GenericServiceResponse<bool> DeleteSupplier(Guid Id);
+        GenericServiceResponse<bool> DeleteSupplier(int Id);
     }
 }

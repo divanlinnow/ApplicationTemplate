@@ -1,14 +1,13 @@
 ﻿using ApplicationFramework.Logging;
 using ApplicationFramework.Notifications;
-using Domain.ViewModels;
 using Domain.Models.Core;
 using Domain.Models.Core.Tests;
 using Domain.Services.Core;
+using Domain.Services.Core.ServiceProvider;
+using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Linq;
-using Domain.Services.Core.ServiceProvider;
-using System;
 
 namespace Domain.Actions.Core.Tests
 {
@@ -36,7 +35,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.EmailService.FindEmailById(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.EmailService.FindEmailById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericItemViewModel<EmailDto>();
 
@@ -46,7 +45,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);
@@ -67,7 +66,7 @@ namespace Domain.Actions.Core.Tests
             GenericServiceResponse<EmailDto> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.EmailService.FindEmailById(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.EmailService.FindEmailById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericItemViewModel<EmailDto>();
 
@@ -77,7 +76,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);

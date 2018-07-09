@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<EmailDto>> GetAllEmails();
 
-        GenericServiceResponse<EmailDto> FindEmailById(Guid Id);
+        GenericServiceResponse<EmailDto> FindEmailById(int Id);
 
         GenericServiceResponse<bool> CreateEmail(EmailDto email);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteEmail(EmailDto email);
 
-        GenericServiceResponse<bool> DeleteEmail(Guid Id);
+        GenericServiceResponse<bool> DeleteEmail(int Id);
     }
 }

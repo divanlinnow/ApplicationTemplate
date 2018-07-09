@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ApplicationFramework.Notifications;
+﻿using ApplicationFramework.Notifications;
 
 namespace Domain.Services.Core
 {

@@ -15,7 +15,7 @@ namespace Domain.Actions.Core
 
         public Func<GenericItemViewModel<CityDto>, T> OnComplete { get; set; }
 
-        public T Invoke(Guid id)
+        public T Invoke(int id)
         {
             return Execute(() =>
             {

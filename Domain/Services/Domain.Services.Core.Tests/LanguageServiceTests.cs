@@ -75,16 +75,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             languageService = new LanguageService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Language>(Guid.Empty)).Returns(new Language()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Language>(It.IsAny<int>())).Returns(new Language()).Verifiable();
 
             // Act
-            var response = languageService.FindLanguageById(Guid.Empty);
+            var response = languageService.FindLanguageById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<LanguageDto>));
-            mockRepository.Verify(x => x.FindById<Language>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Language>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -93,17 +93,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             languageService = new LanguageService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Language>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Language>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = languageService.FindLanguageById(Guid.Empty);
+            var response = languageService.FindLanguageById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<LanguageDto>));
-            mockRepository.Verify(x => x.FindById<Language>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Language>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -232,17 +232,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             languageService = new LanguageService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Language>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Language>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = languageService.DeleteLanguage(Guid.Empty);
+            var response = languageService.DeleteLanguage(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Language>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Language>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -251,17 +251,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             languageService = new LanguageService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Language>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Language>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = languageService.DeleteLanguage(Guid.Empty);
+            var response = languageService.DeleteLanguage(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Language>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Language>(It.IsAny<int>()), Times.Once);
         }
     }
 }

@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             customerService = new CustomerService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Customer>(Guid.Empty)).Returns(new Customer()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Customer>(It.IsAny<int>())).Returns(new Customer()).Verifiable();
 
             // Act
-            var response = customerService.FindCustomerById(Guid.Empty);
+            var response = customerService.FindCustomerById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<CustomerDto>));
-            mockRepository.Verify(x => x.FindById<Customer>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Customer>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             customerService = new CustomerService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Customer>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Customer>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = customerService.FindCustomerById(Guid.Empty);
+            var response = customerService.FindCustomerById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<CustomerDto>));
-            mockRepository.Verify(x => x.FindById<Customer>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Customer>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             customerService = new CustomerService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Customer>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Customer>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = customerService.DeleteCustomer(Guid.Empty);
+            var response = customerService.DeleteCustomer(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Customer>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Customer>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             customerService = new CustomerService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Customer>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Customer>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = customerService.DeleteCustomer(Guid.Empty);
+            var response = customerService.DeleteCustomer(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Customer>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Customer>(It.IsAny<int>()), Times.Once);
         }
     }
 }

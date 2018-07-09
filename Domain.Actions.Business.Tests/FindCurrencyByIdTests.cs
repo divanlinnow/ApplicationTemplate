@@ -36,7 +36,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericItemViewModel<CurrencyDto>();
 
@@ -46,7 +46,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);
@@ -67,7 +67,7 @@ namespace Domain.Actions.Business.Tests
             GenericServiceResponse<CurrencyDto> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericItemViewModel<CurrencyDto>();
 
@@ -77,7 +77,7 @@ namespace Domain.Actions.Business.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);

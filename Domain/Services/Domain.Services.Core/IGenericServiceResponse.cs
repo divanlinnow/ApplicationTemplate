@@ -1,5 +1,4 @@
 ﻿using ApplicationFramework.Notifications;
-using System.Collections.Generic;
 
 namespace Domain.Services.Core
 {

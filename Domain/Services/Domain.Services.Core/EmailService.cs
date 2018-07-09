@@ -40,7 +40,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<EmailDto> FindEmailById(Guid Id)
+        public GenericServiceResponse<EmailDto> FindEmailById(int Id)
         {
             return TryExecute<GenericServiceResponse<EmailDto>>((response) =>
             {
@@ -100,7 +100,7 @@ namespace Domain.Services.Core
             });
         }
 
-        public GenericServiceResponse<bool> DeleteEmail(Guid Id)
+        public GenericServiceResponse<bool> DeleteEmail(int Id)
         {
             return TryExecute<GenericServiceResponse<bool>>((response) =>
             {

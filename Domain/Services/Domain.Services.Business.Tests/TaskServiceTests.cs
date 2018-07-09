@@ -76,16 +76,16 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             taskService = new TaskService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Task>(Guid.Empty)).Returns(new Task()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Task>(It.IsAny<int>())).Returns(new Task()).Verifiable();
 
             // Act
-            var response = taskService.FindTaskById(Guid.Empty);
+            var response = taskService.FindTaskById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Result);
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<TaskDto>));
-            mockRepository.Verify(x => x.FindById<Task>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Task>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -94,17 +94,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             taskService = new TaskService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.FindById<Task>(Guid.Empty)).Throws(new Exception()).Verifiable();
+            mockRepository.Setup(x => x.FindById<Task>(It.IsAny<int>())).Throws(new Exception()).Verifiable();
 
             // Act
-            var response = taskService.FindTaskById(Guid.Empty);
+            var response = taskService.FindTaskById(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsNull(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<TaskDto>));
-            mockRepository.Verify(x => x.FindById<Task>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.FindById<Task>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -233,17 +233,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             taskService = new TaskService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Task>(Guid.Empty)).Returns(true).Verifiable();
+            mockRepository.Setup(x => x.Delete<Task>(It.IsAny<int>())).Returns(true).Verifiable();
 
             // Act
-            var response = taskService.DeleteTask(Guid.Empty);
+            var response = taskService.DeleteTask(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Result);
             Assert.IsFalse(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Task>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Task>(It.IsAny<int>()), Times.Once);
         }
 
         [TestMethod]
@@ -252,17 +252,17 @@ namespace Domain.Services.Core.Tests
         {
             // Arrange
             taskService = new TaskService(mockRepository.Object, mockLogger.Object, mockCache.Object, mockTelemetry.Object);
-            mockRepository.Setup(x => x.Delete<Task>(Guid.Empty)).Returns(false).Verifiable();
+            mockRepository.Setup(x => x.Delete<Task>(It.IsAny<int>())).Returns(false).Verifiable();
 
             // Act
-            var response = taskService.DeleteTask(Guid.Empty);
+            var response = taskService.DeleteTask(It.IsAny<int>());
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsFalse(response.Result);
             Assert.IsTrue(response.Notifications.HasErrors());
             Assert.IsInstanceOfType(response, typeof(GenericServiceResponse<bool>));
-            mockRepository.Verify(x => x.Delete<Task>(Guid.Empty), Times.Once);
+            mockRepository.Verify(x => x.Delete<Task>(It.IsAny<int>()), Times.Once);
         }
     }
 }

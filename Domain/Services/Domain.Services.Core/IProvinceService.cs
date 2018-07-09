@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Core;
-using System;
 using System.Collections.Generic;
 
 namespace Domain.Services.Core
@@ -8,7 +7,7 @@ namespace Domain.Services.Core
     {
         GenericServiceResponse<IEnumerable<ProvinceDto>> GetAllProvinces();
 
-        GenericServiceResponse<ProvinceDto> FindProvinceById(Guid Id);
+        GenericServiceResponse<ProvinceDto> FindProvinceById(int Id);
 
         GenericServiceResponse<bool> CreateProvince(ProvinceDto province);
 
@@ -16,6 +15,6 @@ namespace Domain.Services.Core
 
         GenericServiceResponse<bool> DeleteProvince(ProvinceDto province);
 
-        GenericServiceResponse<bool> DeleteProvince(Guid Id);
+        GenericServiceResponse<bool> DeleteProvince(int Id);
     }
 }

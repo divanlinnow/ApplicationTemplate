@@ -34,7 +34,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.LanguageService.DeleteLanguage(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.LanguageService.DeleteLanguage(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
@@ -44,7 +44,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);
@@ -66,7 +66,7 @@ namespace Domain.Actions.Core.Tests
             GenericServiceResponse<bool> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.LanguageService.DeleteLanguage(It.IsAny<Guid>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.LanguageService.DeleteLanguage(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
             var viewModel = new GenericViewModel();
 
@@ -76,7 +76,7 @@ namespace Domain.Actions.Core.Tests
             };
 
             // Act
-            var result = action.Invoke(Guid.NewGuid());
+            var result = action.Invoke(1);
 
             // Assert
             Assert.IsNotNull(result);
