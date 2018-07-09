@@ -59,7 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateCurrencyTests.cs" />
+    <Compile Include="DeleteCurrencyByIdTests.cs" />
     <Compile Include="DeleteCurrencyTests.cs" />
+    <Compile Include="FindCurrencyByIdTests.cs" />
+    <Compile Include="GetAllCurrenciesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
