@@ -70,7 +70,7 @@ namespace Domain.Models.Business.Tests
         public void OrderDto_Property_Services()
         {
             var order = new OrderDto();
-            var value = TestHelper.ServiceOrderItems();
+            var value = TestHelper.ServiceOrderItemDtos();
 
             order.Services = value;
 

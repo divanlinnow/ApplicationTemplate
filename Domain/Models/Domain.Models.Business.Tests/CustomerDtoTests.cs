@@ -45,7 +45,7 @@ namespace Domain.Models.Business.Tests
         {
             // Arrange
             var customer = new CustomerDto();
-            var value = TestHelper.Orders();
+            var value = TestHelper.OrderDtos();
 
             // Act
             customer.Orders = value;

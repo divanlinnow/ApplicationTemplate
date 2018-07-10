@@ -56,7 +56,7 @@ namespace Domain.Models.Business.Tests
         public void OrganizationBranchDto_Property_Departments()
         {
             var organizationBranch = new OrganizationBranchDto();
-            var value = TestHelper.OrganizationDepartments();
+            var value = TestHelper.OrganizationDepartmentDtos();
 
             organizationBranch.Departments = value;
 

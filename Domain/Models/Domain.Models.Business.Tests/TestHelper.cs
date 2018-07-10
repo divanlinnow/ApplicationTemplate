@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Domain.Models.Business.Tests
 {
-    public class TestHelper
+    public static class TestHelper
     {
         public static CurrencyDto CurrencyDto()
         {
@@ -44,6 +44,31 @@ namespace Domain.Models.Business.Tests
                 AllowancePeriod_Days = 10,
                 AllowancePeriod_Months = 10,
                 IsPreferredCustomer = true
+            };
+        }
+
+        public static List<CustomerDto> CustomerDtos()
+        {
+            return new List<CustomerDto>
+            {
+                new CustomerDto
+                {
+                    User = Core.Tests.TestHelper.UserDto(),
+                    CreditBlocked = false,
+                    CreditLimit = 100,
+                    AllowancePeriod_Days = 10,
+                    AllowancePeriod_Months = 10,
+                    IsPreferredCustomer = true
+                },
+                new CustomerDto
+                {
+                    User = Core.Tests.TestHelper.UserDto(),
+                    CreditBlocked = false,
+                    CreditLimit = 100,
+                    AllowancePeriod_Days = 10,
+                    AllowancePeriod_Months = 10,
+                    IsPreferredCustomer = true
+                }
             };
         }
 
@@ -94,6 +119,35 @@ namespace Domain.Models.Business.Tests
                 ModifiedBy = Core.Tests.TestHelper.UserDto(),
                 IsActive = true,
                 IsDeleted = false
+            };
+        }
+
+        public static List<OrganizationDto> OrganizationDtos()
+        {
+            return new List<OrganizationDto>
+            {
+                new OrganizationDto
+                {
+                    RegisteredName = "Test Registered Organization Name 1",
+                    PrintName = "Test Organization 1",
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new OrganizationDto
+                {
+                    RegisteredName = "Test Registered Organization Name 2",
+                    PrintName = "Test Organization 2",
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
             };
         }
 
@@ -158,7 +212,7 @@ namespace Domain.Models.Business.Tests
             };
         }
 
-        public static List<OrganizationDepartmentDto> OrganizationDepartments()
+        public static List<OrganizationDepartmentDto> OrganizationDepartmentDtos()
         {
             return new List<OrganizationDepartmentDto>
             {
@@ -209,6 +263,41 @@ namespace Domain.Models.Business.Tests
             };
         }
 
+        public static List<JobDto> JobDtos()
+        {
+            return new List<JobDto>
+            {
+                new JobDto
+                {
+                    Organization = OrganizationDto(),
+                    Branch = OrganizationBranchDto(),
+                    Department = OrganizationDepartmentDto(),
+                    Title = "Test Job 1",
+                    Role = Core.Tests.TestHelper.RoleDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new JobDto
+                {
+                    Organization = OrganizationDto(),
+                    Branch = OrganizationBranchDto(),
+                    Department = OrganizationDepartmentDto(),
+                    Title = "Test Job 2",
+                    Role = Core.Tests.TestHelper.RoleDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
+            };
+        }
+
         public static OrderDto OrderDto()
         {
             return new OrderDto
@@ -216,7 +305,7 @@ namespace Domain.Models.Business.Tests
                 Customer = CustomerDto(),
                 PlacementDate = DateTime.Now,
                 Products = ProductOrderItemDtos(),
-                Services = ServiceOrderItems(),
+                Services = ServiceOrderItemDtos(),
                 TrackingNumber = "Test Tracking Number ABC 123",
                 DeliveryAddress = Core.Tests.TestHelper.AddressDto(),
                 CollectionAddress = Core.Tests.TestHelper.AddressDto(),
@@ -233,7 +322,7 @@ namespace Domain.Models.Business.Tests
             };
         }
 
-        public static List<OrderDto> Orders()
+        public static List<OrderDto> OrderDtos()
         {
             return new List<OrderDto>
             {
@@ -242,7 +331,7 @@ namespace Domain.Models.Business.Tests
                     Customer = CustomerDto(),
                     PlacementDate = DateTime.Now,
                     Products = ProductOrderItemDtos(),
-                    Services = ServiceOrderItems(),
+                    Services = ServiceOrderItemDtos(),
                     TrackingNumber = "Test Tracking Number ABC 123",
                     DeliveryAddress = Core.Tests.TestHelper.AddressDto(),
                     CollectionAddress = Core.Tests.TestHelper.AddressDto(),
@@ -262,7 +351,7 @@ namespace Domain.Models.Business.Tests
                     Customer = CustomerDto(),
                     PlacementDate = DateTime.Now,
                     Products = ProductOrderItemDtos(),
-                    Services = ServiceOrderItems(),
+                    Services = ServiceOrderItemDtos(),
                     TrackingNumber = "Test Tracking Number ABC 123",
                     DeliveryAddress = Core.Tests.TestHelper.AddressDto(),
                     CollectionAddress = Core.Tests.TestHelper.AddressDto(),
@@ -303,6 +392,57 @@ namespace Domain.Models.Business.Tests
                 ModifiedBy = Core.Tests.TestHelper.UserDto(),
                 IsActive = true,
                 IsDeleted = false
+            };
+        }
+
+        public static List<ProductDto> ProductDtos()
+        {
+            return new List<ProductDto>
+            {
+                new ProductDto
+                {
+                    Name = "Test Product 1",
+                    Make = "Test Make",
+                    Model = "Test Model",
+                    Year = DateTime.Now.Year,
+                    Description = "Test Product Description",
+                    MinimumOrderQuantity = 10,
+                    PriceEXCL = 100,
+                    PriceINCL = 200,
+                    PriceMustChange = false,
+                    PriceExpiryDate = DateTime.Now.AddYears(1),
+                    HasExpiryDate = false,
+                    ExpiryDate = DateTime.Now.AddYears(10),
+                    Supplier = SupplierDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new ProductDto
+                {
+                    Name = "Test Product 2",
+                    Make = "Test Make",
+                    Model = "Test Model",
+                    Year = DateTime.Now.Year,
+                    Description = "Test Product Description",
+                    MinimumOrderQuantity = 10,
+                    PriceEXCL = 100,
+                    PriceINCL = 200,
+                    PriceMustChange = false,
+                    PriceExpiryDate = DateTime.Now.AddYears(1),
+                    HasExpiryDate = false,
+                    ExpiryDate = DateTime.Now.AddYears(10),
+                    Supplier = SupplierDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
             };
         }
 
@@ -358,6 +498,51 @@ namespace Domain.Models.Business.Tests
             };
         }
 
+        public static List<ServiceDto> ServiceDtos()
+        {
+            return new List<ServiceDto>
+            {
+                new ServiceDto
+                {
+                    Name = "Test Service 1",
+                    Description = "Test Service Description",
+                    MinimumOrderQuantity = 10,
+                    PriceEXCL = 100,
+                    PriceINCL = 200,
+                    PriceMustChange = false,
+                    PriceExpiryDate = DateTime.Now.AddYears(1),
+                    HasExpiryDate = false,
+                    ExpiryDate = DateTime.Now.AddYears(10),
+                    Supplier = SupplierDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new ServiceDto
+                {
+                    Name = "Test Service 2",
+                    Description = "Test Service Description",
+                    MinimumOrderQuantity = 10,
+                    PriceEXCL = 100,
+                    PriceINCL = 200,
+                    PriceMustChange = false,
+                    PriceExpiryDate = DateTime.Now.AddYears(1),
+                    HasExpiryDate = false,
+                    ExpiryDate = DateTime.Now.AddYears(10),
+                    Supplier = SupplierDto(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
+            };
+        }
+
         public static ServiceOrderItemDto ServiceOrderItemDto()
         {
             return new ServiceOrderItemDto
@@ -368,7 +553,7 @@ namespace Domain.Models.Business.Tests
             };
         }
 
-        public static List<ServiceOrderItemDto> ServiceOrderItems()
+        public static List<ServiceOrderItemDto> ServiceOrderItemDtos()
         {
             return new List<ServiceOrderItemDto>
             {
@@ -399,6 +584,35 @@ namespace Domain.Models.Business.Tests
                 ModifiedBy = Core.Tests.TestHelper.UserDto(),
                 IsActive = true,
                 IsDeleted = false
+            };
+        }
+
+        public static List<SupplierDto> SupplierDtos()
+        {
+            return new List<SupplierDto>
+            {
+                new SupplierDto
+                {
+                    Organization = OrganizationDto(),
+                    Name = "Test Supplier 1",
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new SupplierDto
+                {
+                    Organization = OrganizationDto(),
+                    Name = "Test Supplier 2",
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
             };
         }
 
@@ -496,6 +710,41 @@ namespace Domain.Models.Business.Tests
                 ModifiedBy = Core.Tests.TestHelper.UserDto(),
                 IsActive = true,
                 IsDeleted = false
+            };
+        }
+
+        public static List<WorkflowDto> WorkflowDtos()
+        {
+            return new List<WorkflowDto>
+            {
+                new WorkflowDto
+                {
+                    Name = "Test Workflow Process 1",
+                    Description = "Test Workflow Process Description",
+                    Department = OrganizationDepartmentDto(),
+                    Employees = EmployeeDtos(),
+                    Tasks = TaskDtos(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                },
+                new WorkflowDto
+                {
+                    Name = "Test Workflow Process 2",
+                    Description = "Test Workflow Process Description",
+                    Department = OrganizationDepartmentDto(),
+                    Employees = EmployeeDtos(),
+                    Tasks = TaskDtos(),
+                    Created = DateTime.Now,
+                    CreatedBy = Core.Tests.TestHelper.UserDto(),
+                    Modified = DateTime.Now,
+                    ModifiedBy = Core.Tests.TestHelper.UserDto(),
+                    IsActive = true,
+                    IsDeleted = false
+                }
             };
         }
     }

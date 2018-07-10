@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Domain.Models.Core.Tests
 {
-    public class TestHelper
+    public static class TestHelper
     {
         public static AddressDto AddressDto()
         {

@@ -110,6 +110,18 @@
     <Compile Include="FindEmployeeByIdTests.cs" />
     <Compile Include="FindCustomerByIdTests.cs" />
     <Compile Include="FindCurrencyByIdTests.cs" />
+    <Compile Include="GetAllWorkflowsTests.cs" />
+    <Compile Include="GetAllTasksTests.cs" />
+    <Compile Include="GetAllSuppliersTests.cs" />
+    <Compile Include="GetAllServicesTests.cs" />
+    <Compile Include="GetAllProductsTests.cs" />
+    <Compile Include="GetAllOrganizationDepartmentsTests.cs" />
+    <Compile Include="GetAllOrganizationBranchesTests.cs" />
+    <Compile Include="GetAllOrganizationsTests.cs" />
+    <Compile Include="GetAllOrdersTests.cs" />
+    <Compile Include="GetAllJobsTests.cs" />
+    <Compile Include="GetAllEmployeesTests.cs" />
+    <Compile Include="GetAllCustomersTests.cs" />
     <Compile Include="GetAllCurrenciesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
