@@ -10,7 +10,7 @@ namespace Domain.Models.Core
 
         public virtual string Extension { get; set; }
         
-        public virtual Guid FolderID { get; set; }
+        public virtual int FolderID { get; set; }
 
         public virtual DateTime Created { get; set; }
 

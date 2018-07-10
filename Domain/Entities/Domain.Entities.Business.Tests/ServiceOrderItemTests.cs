@@ -26,14 +26,14 @@ namespace Domain.Entities.Business.Tests
         {
             // Arrange
             var serviceOrderItem = new ServiceOrderItem();
-            var value = Guid.NewGuid();
+            var value = 99;
 
             // Act
             serviceOrderItem.OrderId = value;
 
             // Assert
             Assert.IsNotNull(serviceOrderItem.OrderId);
-            Assert.IsInstanceOfType(serviceOrderItem.OrderId, typeof(Guid));
+            Assert.IsInstanceOfType(serviceOrderItem.OrderId, typeof(int));
             Assert.AreEqual(value, serviceOrderItem.OrderId);
         }
 
@@ -43,14 +43,14 @@ namespace Domain.Entities.Business.Tests
         {
             // Arrange
             var serviceOrderItem = new ServiceOrderItem();
-            var value = Guid.NewGuid();
+            var value = 99;
 
             // Act
             serviceOrderItem.ServiceId = value;
 
             // Assert
             Assert.IsNotNull(serviceOrderItem.ServiceId);
-            Assert.IsInstanceOfType(serviceOrderItem.ServiceId, typeof(Guid));
+            Assert.IsInstanceOfType(serviceOrderItem.ServiceId, typeof(int));
             Assert.AreEqual(value, serviceOrderItem.ServiceId);
         }
 
@@ -114,11 +114,11 @@ namespace Domain.Entities.Business.Tests
             Assert.IsInstanceOfType(result, typeof(ServiceOrderItemDto));
 
             Assert.IsNotNull(result.OrderId);
-            Assert.IsInstanceOfType(result.OrderId, typeof(Guid));
+            Assert.IsInstanceOfType(result.OrderId, typeof(int));
             Assert.AreEqual(serviceOrderItem.OrderId, result.OrderId);
 
             Assert.IsNotNull(result.ServiceId);
-            Assert.IsInstanceOfType(result.ServiceId, typeof(Guid));
+            Assert.IsInstanceOfType(result.ServiceId, typeof(int));
             Assert.AreEqual(serviceOrderItem.ServiceId, result.ServiceId);
 
             Assert.IsNotNull(result.Quantity);

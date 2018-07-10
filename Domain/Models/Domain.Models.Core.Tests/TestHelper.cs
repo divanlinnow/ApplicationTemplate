@@ -211,7 +211,7 @@ namespace Domain.Models.Core.Tests
             return new FolderDto
             {
                 Name = "Test Folder",
-                ParentFolderID = new Guid(),
+                ParentFolderID = 99,
                 Created = DateTime.Now,
                 CreatedBy = UserDto(),
                 Modified = DateTime.Now,
@@ -226,7 +226,7 @@ namespace Domain.Models.Core.Tests
             {
                 Name = "Test Folder",
                 Extension = ".txt",
-                FolderID = new Guid(),
+                FolderID = 99,
                 Created = DateTime.Now,
                 CreatedBy = UserDto(),
                 Modified = DateTime.Now,

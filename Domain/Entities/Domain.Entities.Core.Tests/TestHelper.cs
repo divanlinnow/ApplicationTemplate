@@ -211,7 +211,7 @@ namespace Domain.Entities.Core.Tests
             return new Folder
             {
                 Name = "Test Folder",
-                ParentFolderID = new Guid(),
+                ParentFolderID = 99,
                 Created = DateTime.Now,
                 CreatedBy = User(),
                 Modified = DateTime.Now,
@@ -227,7 +227,7 @@ namespace Domain.Entities.Core.Tests
                 Name = "Test Folder",
                 Extension = ".txt",
                 Container = "Test Container",
-                FolderID = new Guid(),
+                FolderID = 99,
                 Created = DateTime.Now,
                 CreatedBy = User(),
                 Modified = DateTime.Now,

@@ -8,7 +8,7 @@ namespace Domain.Entities.Core
         
         public virtual string Name { get; set; }
 
-        public virtual Guid ParentFolderID { get; set; }
+        public virtual int ParentFolderID { get; set; }
 
         public virtual DateTime Created { get; set; }
 

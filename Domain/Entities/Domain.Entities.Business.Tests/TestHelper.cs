@@ -450,9 +450,9 @@ namespace Domain.Entities.Business.Tests
         {
             return new ProductOrderItem
             {
-                OrderId = Guid.NewGuid(),
-                ProductId = Guid.NewGuid(),
-                Quantity = 10
+                OrderId = 99,
+                ProductId = 99,
+                Quantity = 100
             };
         }
 
@@ -462,15 +462,15 @@ namespace Domain.Entities.Business.Tests
             {
                 new ProductOrderItem
                 {
-                    OrderId = Guid.NewGuid(),
-                    ProductId = Guid.NewGuid(),
-                    Quantity = 10
+                    OrderId = 99,
+                    ProductId = 99,
+                    Quantity = 100
                 },
                 new ProductOrderItem
                 {
-                    OrderId = Guid.NewGuid(),
-                    ProductId = Guid.NewGuid(),
-                    Quantity = 10
+                    OrderId = 99,
+                    ProductId = 99,
+                    Quantity = 100
                 }
             };
         }
@@ -547,9 +547,9 @@ namespace Domain.Entities.Business.Tests
         {
             return new ServiceOrderItem
             {
-                OrderId = Guid.NewGuid(),
-                ServiceId = Guid.NewGuid(),
-                Quantity = 10
+                OrderId = 99,
+                ServiceId = 99,
+                Quantity = 100
             };
         }
 
@@ -559,15 +559,15 @@ namespace Domain.Entities.Business.Tests
             {
                 new ServiceOrderItem
                 {
-                    OrderId = Guid.NewGuid(),
-                    ServiceId = Guid.NewGuid(),
-                    Quantity = 10
+                    OrderId = 99,
+                    ServiceId = 99,
+                    Quantity = 100
                 },
                 new ServiceOrderItem
                 {
-                    OrderId = Guid.NewGuid(),
-                    ServiceId = Guid.NewGuid(),
-                    Quantity = 10
+                    OrderId = 99,
+                    ServiceId = 99,
+                    Quantity = 100
                 }
             };
         }

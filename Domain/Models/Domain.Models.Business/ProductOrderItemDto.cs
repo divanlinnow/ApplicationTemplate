@@ -7,9 +7,9 @@ namespace Domain.Models.Business
     {
         #region Properties
 
-        public virtual Guid OrderId { get; set; }
+        public virtual int OrderId { get; set; }
 
-        public virtual Guid ProductId { get; set; }
+        public virtual int ProductId { get; set; }
 
         public virtual decimal Quantity { get; set; }
 

@@ -9,12 +9,12 @@ namespace ORM.NHibernate.Migrations
         public override void Up()
         {
             Create.Table("Category")
-                .WithColumn("Id").AsGuid().NotNullable().PrimaryKey()
+                .WithColumn("Id").AsInt32().NotNullable().PrimaryKey()
                 .WithColumn("Name").AsString(255);
 
             Create.Table("Product")
-                .WithColumn("Id").AsGuid().NotNullable().PrimaryKey()
-                .WithColumn("CategoryId").AsGuid().ForeignKey("Category", "Id")
+                .WithColumn("Id").AsInt32().NotNullable().PrimaryKey()
+                .WithColumn("CategoryId").AsInt32().ForeignKey("Category", "Id")
                 .WithColumn("Name").AsString(255)
                 .WithColumn("Price").AsDecimal();
         }

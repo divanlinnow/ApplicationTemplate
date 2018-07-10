@@ -14,7 +14,7 @@ namespace Domain.Entities.Core
 
         public virtual byte[] Hash { get; set; }
 
-        public virtual Guid FolderID { get; set; }
+        public virtual int FolderID { get; set; }
 
         public virtual DateTime Created { get; set; }
 

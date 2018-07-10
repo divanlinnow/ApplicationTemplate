@@ -42,14 +42,14 @@ namespace Domain.Entities.Core.Tests
         {
             // Arrange
             var folder = new Folder();
-            var value = new Guid();
+            var value = 99;
 
             // Act
             folder.ParentFolderID = value;
 
             // Assert
             Assert.IsNotNull(folder.ParentFolderID);
-            Assert.IsInstanceOfType(folder.ParentFolderID, typeof(Guid));
+            Assert.IsInstanceOfType(folder.ParentFolderID, typeof(int));
             Assert.AreEqual(value, folder.ParentFolderID);
         }
 
@@ -176,7 +176,7 @@ namespace Domain.Entities.Core.Tests
             Assert.AreEqual(folder.Name, result.Name);
 
             Assert.IsNotNull(result.ParentFolderID);
-            Assert.IsInstanceOfType(result.ParentFolderID, typeof(Guid));
+            Assert.IsInstanceOfType(result.ParentFolderID, typeof(int));
             Assert.AreEqual(folder.ParentFolderID, result.ParentFolderID);
 
             Assert.IsNotNull(result.Created);

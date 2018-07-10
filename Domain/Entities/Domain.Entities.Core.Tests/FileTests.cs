@@ -76,14 +76,14 @@ namespace Domain.Entities.Core.Tests
         {
             // Arrange
             var file = new File();
-            var value = new Guid();
+            var value = 99;
 
             // Act
             file.FolderID = value;
 
             // Assert
             Assert.IsNotNull(file.FolderID);
-            Assert.IsInstanceOfType(file.FolderID, typeof(Guid));
+            Assert.IsInstanceOfType(file.FolderID, typeof(int));
             Assert.AreEqual(value, file.FolderID);
         }
 
@@ -214,7 +214,7 @@ namespace Domain.Entities.Core.Tests
             Assert.AreEqual(file.Extension, result.Extension);
 
             Assert.IsNotNull(result.FolderID);
-            Assert.IsInstanceOfType(result.FolderID, typeof(Guid));
+            Assert.IsInstanceOfType(result.FolderID, typeof(int));
             Assert.AreEqual(file.FolderID, result.FolderID);
 
             Assert.IsNotNull(result.Created);
