@@ -2,13 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ORM.EF.Contexts;
 using ORM.EF.Repositories;
-using System;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Text;
 
 namespace ORM.EF.Tests
 {
+    // TODO: Complete unit testing
+    [Ignore]
     [TestClass]
     public class GenericRepositoryTests
     {

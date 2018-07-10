@@ -17,6 +17,7 @@ namespace ORM.NHibernate.Tests
 
         // TODO: Complete unit testing NHibernate Generic Repository
         [TestMethod]
+        [Ignore]
         [TestCategory("Repositories - Generic - NHibernate")]
         public void GenericRepository_All()
         {
