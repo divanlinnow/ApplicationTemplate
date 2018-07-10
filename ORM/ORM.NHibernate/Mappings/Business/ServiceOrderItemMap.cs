@@ -15,12 +15,12 @@ namespace ORM.NHibernate.Mappings.Business
 
             //Map(x => x.OrderId)
             //    .Column("OrderId")
-            //    .CustomSqlType("UNIQUEIDENTIFIER")
+            //    .CustomSqlType("INT")
             //    .Not.Nullable();
 
             //Map(x => x.Service.Id)
             //    .Column("ProductId")
-            //    .CustomSqlType("UNIQUEIDENTIFIER")
+            //    .CustomSqlType("INT")
             //    .Not.Nullable();
 
             //Map(x => x.Quantity)

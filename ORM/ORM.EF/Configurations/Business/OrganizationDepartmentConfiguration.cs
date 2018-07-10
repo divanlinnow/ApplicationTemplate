@@ -37,7 +37,7 @@ namespace ORM.EF.Configurations.Business
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnOrder(0)
                 .HasColumnName("ID")
-                .HasColumnType("UNIQUEIDENTIFIER")
+                .HasColumnType("INT")
                 .IsRequired();
 
             Property(p => p.Name)

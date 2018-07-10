@@ -11,7 +11,7 @@ namespace ORM.NHibernate.Mappings.Business
 
             Id(x => x.ID)
                 .Column("ID")
-                .CustomSqlType("UNIQUEIDENTIFIER")
+                .CustomSqlType("INT")
                 .GeneratedBy.Assigned()
                 .Not.Nullable();
 

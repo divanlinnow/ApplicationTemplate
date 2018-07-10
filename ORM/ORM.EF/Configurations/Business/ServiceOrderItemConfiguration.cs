@@ -18,13 +18,13 @@ namespace ORM.EF.Configurations.Business
             Property(p => p.OrderId)
                 .HasColumnOrder(0)
                 .HasColumnName("OrderId")
-                .HasColumnType("UNIQUEIDENTIFIER")
+                .HasColumnType("INT")
                 .IsRequired();
 
             Property(p => p.ServiceId)
                 .HasColumnOrder(1)
                 .HasColumnName("ServiceId")
-                .HasColumnType("UNIQUEIDENTIFIER")
+                .HasColumnType("INT")
                 .IsRequired();
 
             Property(p => p.Quantity)

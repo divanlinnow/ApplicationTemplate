@@ -11,7 +11,7 @@ namespace ORM.NHibernate.Mappings.Core
 
             Id(x => x.ID)
                 .Column("ID")
-                .CustomSqlType("UNIQUEIDENTIFIER")
+                .CustomSqlType("INT")
                 .GeneratedBy.Assigned()
                 .Not.Nullable();
 

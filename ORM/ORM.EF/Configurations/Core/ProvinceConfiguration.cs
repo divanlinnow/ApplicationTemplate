@@ -23,7 +23,7 @@ namespace ORM.EF.Configurations.Core
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnOrder(0)
                 .HasColumnName("ID")
-                .HasColumnType("UNIQUEIDENTIFIER")
+                .HasColumnType("INT")
                 .IsRequired();
 
             Property(p => p.ISOCode)
