@@ -23,7 +23,7 @@ namespace Domain.Actions.Business.Tests
         }
 
         [TestMethod]
-        [TestCategory("Actions - Core")]
+        [TestCategory("Actions - Business")]
         public void DeleteCurrencyById_Action_Success()
         {
             // Arrange
@@ -58,7 +58,7 @@ namespace Domain.Actions.Business.Tests
         }
 
         [TestMethod]
-        [TestCategory("Actions - Core")]
+        [TestCategory("Actions - Business")]
         public void DeleteCurrencyById_Action_Fails()
         {
             // Arrange

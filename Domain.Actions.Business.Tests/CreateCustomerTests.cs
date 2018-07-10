@@ -1,19 +1,17 @@
 ﻿using ApplicationFramework.Logging;
 using ApplicationFramework.Notifications;
-using Domain.Models.Business;
 using Domain.Models.Business.Tests;
 using Domain.Services.Business.ServiceProvider;
 using Domain.Services.Core;
 using Domain.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Linq;
 
 namespace Domain.Actions.Business.Tests
 {
     [TestClass]
-    public class FindCurrencyByIdTests
+    public class CreateCustomerTests
     {
         private Mock<ILogger> mockLogger;
         private Mock<IServiceProviderBusiness> mockClientServicesProvider;
@@ -27,66 +25,73 @@ namespace Domain.Actions.Business.Tests
 
         [TestMethod]
         [TestCategory("Actions - Business")]
-        public void FindCurrencyById_Action_Success()
+        public void CreateCustomer_Action_Success()
         {
             // Arrange
-            var fakeResponse = new GenericServiceResponse<CurrencyDto>
+            var customerDto = TestHelper.CustomerDto();
+
+            var fakeResponse = new GenericServiceResponse<bool>
             {
-                Result = TestHelper.CurrencyDto()
+                Result = true
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CustomerService.CreateCustomer(customerDto)).Returns(fakeResponse).Verifiable();
 
-            var viewModel = new GenericItemViewModel<CurrencyDto>();
+            var viewModel = new GenericViewModel();
 
-            var action = new FindCurrencyById<GenericItemViewModel<CurrencyDto>>(mockClientServicesProvider.Object)
+            var action = new CreateCustomer<GenericViewModel>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
 
             // Act
-            var result = action.Invoke(1);
+            var result = action.Invoke(customerDto);
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<CurrencyDto>));
+            Assert.IsInstanceOfType(result, typeof(GenericViewModel));
             Assert.IsNotNull(result.Notifications);
             Assert.IsInstanceOfType(result.Notifications, typeof(NotificationCollection));
             Assert.IsTrue(result.Notifications.Count() == 0);
             Assert.IsFalse(result.HasErrors);
-            Assert.IsNotNull(result.Item);
-            Assert.IsInstanceOfType(result.Item, typeof(CurrencyDto));
+            Assert.IsNotNull(result.Success);
+            Assert.IsInstanceOfType(result.Success, typeof(bool));
+            Assert.IsTrue(result.Success);
         }
 
         [TestMethod]
         [TestCategory("Actions - Business")]
-        public void FindCurrencyById_Action_Fails()
+        public void CreateCustomer_Action_Fails()
         {
             // Arrange
-            GenericServiceResponse<CurrencyDto> fakeResponse = null;
+            var customerDto = TestHelper.CustomerDto();
+
+            GenericServiceResponse<bool> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.CustomerService.CreateCustomer(customerDto)).Returns(fakeResponse).Verifiable();
 
-            var viewModel = new GenericItemViewModel<CurrencyDto>();
+            var viewModel = new GenericViewModel();
 
-            var action = new FindCurrencyById<GenericItemViewModel<CurrencyDto>>(mockClientServicesProvider.Object)
+            var action = new CreateCustomer<GenericViewModel>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
 
             // Act
-            var result = action.Invoke(1);
+            var result = action.Invoke(customerDto);
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<CurrencyDto>));
+            Assert.IsInstanceOfType(result, typeof(GenericViewModel));
             Assert.IsNotNull(result.Notifications);
             Assert.IsInstanceOfType(result.Notifications, typeof(NotificationCollection));
             Assert.IsTrue(result.Notifications.Count() == 1);
             Assert.IsTrue(result.HasErrors);
-            Assert.IsNull(result.Item);
+            Assert.IsNotNull(result.Success);
+            Assert.IsInstanceOfType(result.Success, typeof(bool));
+            Assert.IsFalse(result.Success);
         }
     }
 }

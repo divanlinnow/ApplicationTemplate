@@ -58,7 +58,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateWorkflowTests.cs" />
+    <Compile Include="CreateTaskTests.cs" />
+    <Compile Include="CreateSupplierTests.cs" />
+    <Compile Include="CreateServiceTests.cs" />
+    <Compile Include="CreateProductTests.cs" />
+    <Compile Include="CreateOrganizationBranchTests.cs" />
+    <Compile Include="CreateOrganizationDepartmentTests.cs" />
+    <Compile Include="CreateOrganizationTests.cs" />
+    <Compile Include="CreateOrderTests.cs" />
+    <Compile Include="CreateJobTests.cs" />
+    <Compile Include="CreateEmployeeTests.cs" />
+    <Compile Include="CreateCustomerTests.cs" />
     <Compile Include="CreateCurrencyTests.cs" />
+    <Compile Include="DeleteWorkflowByIdTests.cs" />
+    <Compile Include="DeleteTaskByIdTests.cs" />
+    <Compile Include="DeleteSupplierByIdTests.cs" />
+    <Compile Include="DeleteServiceByIdTests.cs" />
+    <Compile Include="DeleteProductByIdTests.cs" />
+    <Compile Include="DeleteOrganizationDepartmentByIdTests.cs" />
+    <Compile Include="DeleteOrganizationBranchByIdTests.cs" />
+    <Compile Include="DeleteOrganizationByIdTests.cs" />
+    <Compile Include="DeleteOrderByIdTests.cs" />
+    <Compile Include="DeleteJobByIdTests.cs" />
+    <Compile Include="DeleteEmployeeByIdTests.cs" />
+    <Compile Include="DeleteCustomerByIdTests.cs" />
     <Compile Include="DeleteCurrencyByIdTests.cs" />
     <Compile Include="DeleteCurrencyTests.cs" />
     <Compile Include="FindCurrencyByIdTests.cs" />

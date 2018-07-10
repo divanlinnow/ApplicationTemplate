@@ -26,7 +26,7 @@ namespace Domain.Actions.Business.Tests
         }
 
         [TestMethod]
-        [TestCategory("Actions - Core")]
+        [TestCategory("Actions - Business")]
         public void GetAllCurrencies_Action_Success()
         {
             // Arrange
@@ -61,7 +61,7 @@ namespace Domain.Actions.Business.Tests
         }
 
         [TestMethod]
-        [TestCategory("Actions - Core")]
+        [TestCategory("Actions - Business")]
         public void GetAllCurrencies_Action_Fails()
         {
             // Arrange
