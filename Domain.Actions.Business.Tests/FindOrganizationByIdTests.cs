@@ -12,7 +12,7 @@ using System.Linq;
 namespace Domain.Actions.Business.Tests
 {
     [TestClass]
-    public class FindCurrencyByIdTests
+    public class FindOrganizationByIdTests
     {
         private Mock<ILogger> mockLogger;
         private Mock<IServiceProviderBusiness> mockClientServicesProvider;
@@ -26,20 +26,20 @@ namespace Domain.Actions.Business.Tests
 
         [TestMethod]
         [TestCategory("Actions - Business")]
-        public void FindCurrencyById_Action_Success()
+        public void FindOrganizationById_Action_Success()
         {
             // Arrange
-            var fakeResponse = new GenericServiceResponse<CurrencyDto>
+            var fakeResponse = new GenericServiceResponse<OrganizationDto>
             {
-                Result = TestHelper.CurrencyDto()
+                Result = TestHelper.OrganizationDto()
             };
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.OrganizationService.FindOrganizationById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
-            var viewModel = new GenericItemViewModel<CurrencyDto>();
+            var viewModel = new GenericItemViewModel<OrganizationDto>();
 
-            var action = new FindCurrencyById<GenericItemViewModel<CurrencyDto>>(mockClientServicesProvider.Object)
+            var action = new FindOrganizationById<GenericItemViewModel<OrganizationDto>>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
@@ -49,28 +49,28 @@ namespace Domain.Actions.Business.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<CurrencyDto>));
+            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<OrganizationDto>));
             Assert.IsNotNull(result.Notifications);
             Assert.IsInstanceOfType(result.Notifications, typeof(NotificationCollection));
             Assert.IsTrue(result.Notifications.Count() == 0);
             Assert.IsFalse(result.HasErrors);
             Assert.IsNotNull(result.Item);
-            Assert.IsInstanceOfType(result.Item, typeof(CurrencyDto));
+            Assert.IsInstanceOfType(result.Item, typeof(OrganizationDto));
         }
 
         [TestMethod]
         [TestCategory("Actions - Business")]
-        public void FindCurrencyById_Action_Fails()
+        public void FindOrganizationById_Action_Fails()
         {
             // Arrange
-            GenericServiceResponse<CurrencyDto> fakeResponse = null;
+            GenericServiceResponse<OrganizationDto> fakeResponse = null;
 
             mockClientServicesProvider.Setup(x => x.Logger).Returns(mockLogger.Object).Verifiable();
-            mockClientServicesProvider.Setup(x => x.CurrencyService.FindCurrencyById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
+            mockClientServicesProvider.Setup(x => x.OrganizationService.FindOrganizationById(It.IsAny<int>())).Returns(fakeResponse).Verifiable();
 
-            var viewModel = new GenericItemViewModel<CurrencyDto>();
+            var viewModel = new GenericItemViewModel<OrganizationDto>();
 
-            var action = new FindCurrencyById<GenericItemViewModel<CurrencyDto>>(mockClientServicesProvider.Object)
+            var action = new FindOrganizationById<GenericItemViewModel<OrganizationDto>>(mockClientServicesProvider.Object)
             {
                 OnComplete = model => viewModel = model
             };
@@ -80,7 +80,7 @@ namespace Domain.Actions.Business.Tests
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<CurrencyDto>));
+            Assert.IsInstanceOfType(result, typeof(GenericItemViewModel<OrganizationDto>));
             Assert.IsNotNull(result.Notifications);
             Assert.IsInstanceOfType(result.Notifications, typeof(NotificationCollection));
             Assert.IsTrue(result.Notifications.Count() == 1);
