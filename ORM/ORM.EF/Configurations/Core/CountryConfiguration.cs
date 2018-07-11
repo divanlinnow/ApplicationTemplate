@@ -50,7 +50,7 @@ namespace ORM.EF.Configurations.Core
 
             HasMany(p => p.Provinces)
                 .WithRequired(p => p.Country)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
 
         public void AddConfiguration(ConfigurationRegistrar registrar)

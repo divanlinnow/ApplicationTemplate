@@ -13,7 +13,7 @@ namespace ORM.EF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201807101604396_Init"; }
+            get { return "201807111125002_Init"; }
         }
         
         string IMigrationMetadata.Source

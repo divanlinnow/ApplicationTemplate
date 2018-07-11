@@ -52,10 +52,11 @@ namespace ORM.EF.Configurations.Core
 
             HasRequired(x => x.Country)
                 .WithMany(p => p.Provinces)
-                .WillCascadeOnDelete(false); 
+                .WillCascadeOnDelete(true);
 
             HasMany(p => p.Cities)
-                .WithRequired(p => p.Province);
+                .WithRequired(p => p.Province)
+                .WillCascadeOnDelete(true);
 
         }
 

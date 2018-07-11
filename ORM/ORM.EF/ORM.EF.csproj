@@ -86,9 +86,9 @@
     <Compile Include="Helpers\DataSeedingHelper.cs" />
     <Compile Include="Initializers\BusinessContextInitializer.cs" />
     <Compile Include="Initializers\CoreContextInitializer.cs" />
-    <Compile Include="Migrations\201807101604396_Init.cs" />
-    <Compile Include="Migrations\201807101604396_Init.Designer.cs">
-      <DependentUpon>201807101604396_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201807111125002_Init.cs" />
+    <Compile Include="Migrations\201807111125002_Init.Designer.cs">
+      <DependentUpon>201807111125002_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +118,8 @@
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807101604396_Init.resx">
-      <DependentUpon>201807101604396_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807111125002_Init.resx">
+      <DependentUpon>201807111125002_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

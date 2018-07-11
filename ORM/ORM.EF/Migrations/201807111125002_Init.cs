@@ -46,12 +46,12 @@ namespace ORM.EF.Migrations
                         ISOCode = c.String(nullable: false, maxLength: 3, unicode: false),
                         Abbreviation = c.String(maxLength: 5, unicode: false),
                         Name = c.String(nullable: false, maxLength: 50),
-                        Country_ID = c.Int(nullable: false),
+                        Country_ID = c.Int(),
                         Province_ID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("AppTemplate.Countries", t => t.Country_ID, cascadeDelete: true)
-                .ForeignKey("AppTemplate.Provinces", t => t.Province_ID)
+                .ForeignKey("AppTemplate.Countries", t => t.Country_ID)
+                .ForeignKey("AppTemplate.Provinces", t => t.Province_ID, cascadeDelete: true)
                 .ForeignKey("AppTemplate.Addresses", t => t.ID)
                 .Index(t => t.ID)
                 .Index(t => t.ISOCode, name: "City_ISOCode")
@@ -85,7 +85,7 @@ namespace ORM.EF.Migrations
                         Country_ID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("AppTemplate.Countries", t => t.Country_ID)
+                .ForeignKey("AppTemplate.Countries", t => t.Country_ID, cascadeDelete: true)
                 .Index(t => t.ISOCode, name: "Province_ISOCode")
                 .Index(t => t.Abbreviation, name: "Province_Abbreviation")
                 .Index(t => t.Name, name: "Province_Name")
