@@ -16,9 +16,7 @@ namespace ORM.EF.Configurations.Core
             ToTable("Provinces");
 
             HasKey(x => x.ID);
-
-            HasRequired(x => x.Country);
-
+            
             Property(p => p.ID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnOrder(0)
