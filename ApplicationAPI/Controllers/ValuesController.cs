@@ -1,18 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using Domain.Actions.Core;
 using System.Web.Http;
 
 namespace ApplicationAPI.Controllers
 {
-    public class ValuesController : ApiController
+    public class ValuesController : BaseController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult  Get()
         {
-            return new string[] { "value1", "value2" };
+            return new GetAllCountries<IHttpActionResult>(ServiceProvider)
+            {
+                OnComplete = (vm) => 
+                {
+                    if (vm.HasErrors)
+                    {
+                        return InternalServerError();
+                    }
+                    else
+                    {
+                        return Ok(vm);
+                    }
+                }
+            }.Invoke();             
         }
 
         // GET api/values/5

@@ -11,8 +11,6 @@ namespace Domain.Services.Core.ServiceProvider
     {
         private bool disposed;
 
-        [Dependency]
-        protected IUnityContainer Container { get; set; }
 
         [Dependency]
         public ILogger Logger { get; set; }
@@ -79,11 +77,7 @@ namespace Domain.Services.Core.ServiceProvider
 
             if (disposing)
             {
-                if (Container != null)
-                {
-                    Container.Dispose();
-                    Container = null;
-                }
+               //do stuff
             }
 
             // release any unmanaged objects
