@@ -11,6 +11,8 @@ namespace Domain.Services.Core.ServiceProvider
     {
         private bool disposed;
 
+        [Dependency]
+        protected IUnityContainer Container { get; set; }
 
         [Dependency]
         public ILogger Logger { get; set; }

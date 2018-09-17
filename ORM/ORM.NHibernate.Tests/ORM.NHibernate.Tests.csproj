@@ -64,10 +64,6 @@
       <Project>{54f3aeaa-378d-4337-999c-bfd0f9ae5ec1}</Project>
       <Name>Domain.Entities.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ORM.NHibernate\ORM.NHibernate.csproj">
-      <Project>{ebede34c-678d-4422-93fe-d689b2131985}</Project>
-      <Name>ORM.NHibernate</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
